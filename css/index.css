@@ -1,6 +1,10 @@
 .logo-w{
     width:5%;
 }
-#hero{
-    background-image: url("img/clockInSpace.png");
+.hero{
+    background-image: url("../img/clockInSpace.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
