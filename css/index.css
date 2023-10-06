@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height:100vh;
-    border:5px solid red;
+    /* border:5px solid red; */
 }
 #hero{
     background-image: url("img/clockInSpace.png");
