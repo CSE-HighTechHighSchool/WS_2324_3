@@ -13,8 +13,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/choose.js"></script>
   </head>
-<body>
-    <nav class="navbar navbar-expand-lg nav-bg sticky-top navbar-dark nb-background-color rounded-pill mt-3 mx-5">
+  <body style="width: 100vw; height: 100vh">
+    <div class="w-100 bg-white border-2">
+      <nav class="navbar navbar-expand-lg nav-bg fixed-top navbar-dark nb-background-color rounded-pill mt-3 mx-5">
         <div class="container-fluid">
           <div class="d-flex align-items-center">
             <img src="img/time_travel_logo.png" alt="EraExchange Logo" class="logo-w mx-2">
@@ -35,19 +36,30 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
             <span class="navbar-toggler-icon"></span>
           </button>
-
-
-        </div>
       </nav>
-
-      <div class="mt-5 text-center">
-        <h1 class="pt-3 headcolor">Choose a Person</h1>
+    </div>
+    <div style="margin-top: 90px; height: calc(100vh - 90px); border: 1px solid black; min-height: 0;">
+      <div class=" text-center" style="flex: 0 0 auto; min-height: 0">
+        <h1 class="pt-3 headcolor" style="font-size: 80px;">Choose a Person</h1>
       </div>
+      <div style="height: 40px; flex: 0 0 40px;"></div>
       <!--Testing card-->
-      <div style="margin-top: 80px; width:80%; margin: 0 auto;display:flex;flex-direction:row;flex-wrap: wrap">
-        <div class="person-card" data-img="img/womrhole.jpg" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/womrhole.jpg" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/womrhole.jpg" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+      <div style="margin-top: 80px; width: 65%; min-height: 0; border: 1px solid black; flex: 1 1 0; margin: 0 auto; display:flex; flex-direction:row; flex-wrap: wrap; overflow-y: auto; padding: 15px 15px;">
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
       </div>
+    </div>
 </body>
 </html>

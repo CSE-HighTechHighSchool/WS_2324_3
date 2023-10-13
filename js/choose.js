@@ -3,8 +3,8 @@ $(document).ready(function() {
 
     const createImg = src => $(`<img src="${src}" height="66" width="66">`).css({
         borderRadius: "50%",
-        width: "66px",
-        height: "66px",
+        width: "70px",
+        height: "70px",
     })
     const createName = name => $(`<h1>${name}</h1>`).css({
         fontSize: "20px",
@@ -20,6 +20,10 @@ $(document).ready(function() {
         textAlign: "center",
     })
 
+    const createSpacer = () => $("<div></div>").css({
+        height: "8px",
+    })
+
     $(".person-card").map(function() {
         const img = $(this).attr("data-img")
         const name = $(this).attr("data-name")
@@ -33,7 +37,8 @@ $(document).ready(function() {
             aspectRatio: "9/11",
             border: "1px solid black",
             borderRadius: "8px",
-            padding: "24px",
+            borderColor: "#94a3b8",
+            padding: "22px",
             margin: "10px",
             display: "flex",
             flexDirection: "column",
@@ -42,6 +47,7 @@ $(document).ready(function() {
             alignItems: "center",
             gap: "8px"
         }).append(createImg(img))
+            .append(createSpacer())
             .append(createName(name))
             .append(createDesc(desc))
     })
