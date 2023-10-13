@@ -1,7 +1,3 @@
-.mx-6{
-
-}
-
 /* Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
@@ -50,4 +46,7 @@
 }
 .about-btn{
     border:2.5px solid #94A3B8;
+}
+.ml-hero{
+    margin-left: 60px;
 }
