@@ -1,6 +1,8 @@
-.logo-w{
-    width:5%;
+.mx-6{
+
 }
+
+/* Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
     background-position: center;
@@ -9,8 +11,14 @@
     height:100vh;
     /* border:5px solid red; */
 }
-#hero{
-    background-image: url("img/clockInSpace.png");
+.logo-w{
+    width:5%;
+}
+.navbar-inner {
+    /* make background darker */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
 }
 .nb-background-color {
     background-color: #E2E8F0;
@@ -19,18 +27,27 @@
     font-size: 30px;
     color: #475569;
 }
-.headcolor {
-    color: #1E293B;
-}
 .nbIndexItem {
     font-size: 25px;
 }
 .gradient {
-    background-image: linear-gradient(to bottom right, #EA7A6A, #4103DE);
+    background-image: linear-gradient(to right, #EA7A6A, #4103DE);
 }
 .btn-sizing {
-    min-width: 170px;
+    width:150px;
+    height:50px;
 }
 .btn-text {
     font-size: 25px;
+    text-decoration: none;
+}
+/* Inside the hero: the text and the buttons */
+.w-35{
+    width:35%;
+}
+.about-btn, .chatnow-btn{
+    padding:10px 30px;
+}
+.about-btn{
+    border:2.5px solid #94A3B8;
 }
