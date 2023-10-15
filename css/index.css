@@ -1,7 +1,6 @@
-.mx-6{
-
+.text-dgray{
+    color: #94A3B8;
 }
-
 /* Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
@@ -12,7 +11,7 @@
     /* border:5px solid red; */
 }
 .logo-w{
-    width:5%;
+    width:8%;
 }
 .navbar-inner {
     /* make background darker */
@@ -32,6 +31,7 @@
 }
 .gradient {
     background-image: linear-gradient(to right, #EA7A6A, #4103DE);
+    background-repeat: no-repeat;
 }
 .btn-sizing {
     width:150px;
@@ -50,4 +50,7 @@
 }
 .about-btn{
     border:2.5px solid #94A3B8;
+}
+.ml-hero{
+    margin-left: 60px;
 }
