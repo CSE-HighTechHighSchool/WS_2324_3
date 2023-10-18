@@ -1,7 +1,7 @@
 .text-dgray{
     color: #94A3B8;
 }
-/* Hero and Navbar */
+/* --------------------------------------- Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
     background-position: center;
@@ -13,6 +13,23 @@
 .logo-w{
     width:8%;
 }
+
+/* navbar item transitions (color + transform */
+.nav-link {
+    color: #94A3B8; /* Base color */
+    transition: 0.5s color linear; /* Transition for color change */
+}
+.nav-item {
+    transition: 0.5s box-shadow linear, 0.5s transform ease-in-out; /* Transition for box-shadow and transform */
+}
+.nav-link:hover {
+    color: white;
+}
+.nav-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-10%);
+}
+
 .navbar-inner {
     /* make background darker */
     width: 100%;
@@ -41,7 +58,7 @@
     font-size: 25px;
     text-decoration: none;
 }
-/* Inside the hero: the text and the buttons */
+/* --------------------------------------- Inside the hero: the text and the buttons */
 .w-35{
     width:35%;
 }
