@@ -83,11 +83,15 @@
 }
 .about-btn, .chatnow-btn{
     padding:10px 30px;
+    box-sizing: border-box;
 }
 .about-btn{
-    border:2.5px solid #94A3B8;
+    transition: 0.5s transform ease-in-out, 0.5s border ease-in-out;
+}
+.about-btn:hover{
+    transform: translateY(-10%);
+    border: 1.5px solid #94A3B8;
 }
 .ml-hero{
     margin-left: 100px;
-
 }
