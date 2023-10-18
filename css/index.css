@@ -7,11 +7,20 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height:100vh;
+    height:100vh;
     /* border:5px solid red; */
 }
 .logo-w{
     width:8%;
+}
+
+.landing-title {
+    font-size: 60px;
+}
+
+.hero-text {
+    font-size: 24px;
+    margin-left: 20px;
 }
 
 /* navbar item transitions (color + transform */
@@ -79,5 +88,6 @@
     border:2.5px solid #94A3B8;
 }
 .ml-hero{
-    margin-left: 60px;
+    margin-left: 100px;
+
 }
