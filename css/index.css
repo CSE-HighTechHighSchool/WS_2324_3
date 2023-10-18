@@ -43,7 +43,7 @@
     z-index: 999;
     background:rgba(0,0,0,0);
     backdrop-filter: blur(0px);
-    transition: 0.5s background ease, 0.5s backdrop-filter ease;
+    transition: 0.25s background ease, 0.25s backdrop-filter ease;
 }
 .navbar.scrolled{
     background:rgba(0,0,0,0.4);
