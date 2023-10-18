@@ -7,7 +7,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height:100vh;
+    min-height:100vh;
     /* border:5px solid red; */
 }
 .logo-w{
@@ -19,17 +19,27 @@
     color: #94A3B8; /* Base color */
     transition: 0.5s color linear; /* Transition for color change */
 }
-.nav-item {
-    transition: 0.5s box-shadow linear, 0.5s transform ease-in-out; /* Transition for box-shadow and transform */
-}
 .nav-link:hover {
     color: white;
 }
+.nav-item {
+    transition: 0.5s box-shadow linear, 0.5s transform ease-in-out; /* Transition for box-shadow and transform */
+}
 .nav-item:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(65, 3, 222, 0.5);
     transform: translateY(-10%);
 }
 
+.navbar{
+    z-index: 999;
+    background:rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
+    transition: 0.5s background ease, 0.5s backdrop-filter ease;
+}
+.navbar.scrolled{
+    background:rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
 .navbar-inner {
     /* make background darker */
     width: 100%;
