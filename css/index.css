@@ -83,7 +83,6 @@
 }
 .about-btn, .chatnow-btn{
     padding:10px 30px;
-    box-sizing: border-box;
 }
 .about-btn{
     transition: 0.5s transform ease-in-out, 0.5s border ease-in-out;
