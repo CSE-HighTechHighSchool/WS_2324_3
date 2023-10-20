@@ -91,7 +91,7 @@
     transform: translateY(-10%);
     border: 1.5px solid #94A3B8;
 }
-/* Style for the button element */
+/* Animation/Styles for the chat-now button element */
 .chatnow-btn {
     display: flex;
     border-radius: 4px;
@@ -104,34 +104,37 @@
     width: 130px;
     transition: all 0.5s;
     cursor: pointer;
+    align-items: center;
+    min-width: 150px;
     margin: 5px;
+    flex-wrap: nowrap;
 }
-
-/* Style for the span element inside the button */
 .chatnow-btn a {
     cursor: pointer;
-    display: inline-block;
+    display: inline;
+    white-space: nowrap;
     position: relative;
     transition: 0.5s;
 }
-
 .chatnow-btn a:after {
-    content: '»';
+    content: ' »';
     position: absolute;
     opacity: 0;
     top: 0;
     right: -15px;
     transition: 0.5s;
 }
-
+.chatnow-btn:hover {
+    min-width: 160px;
+}
 .chatnow-btn:hover a {
     padding-right: 15px;
 }
-
 .chatnow-btn:hover a:after {
     opacity: 1;
     right: 0;
 }  
+
 .ml-hero{
     margin-left: 100px;
 }
