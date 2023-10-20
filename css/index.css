@@ -1,6 +1,10 @@
 .text-dgray{
     color: #94A3B8;
 }
+.bg-dblack{
+    /* used in index page section 1 */
+    background: #000006;
+}
 /* --------------------------------------- Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
@@ -166,3 +170,4 @@
 .ml-hero{
     margin-left: 100px;
 }
+/* --------------------------------------- Index page section 1 */
