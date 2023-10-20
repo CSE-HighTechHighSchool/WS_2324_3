@@ -29,7 +29,7 @@
     transition: 0.5s color linear; /* Transition for color change */
 }
 .nav-link:hover {
-    color: white;
+    color: black;
 }
 .navbar{
     background:rgba(0,0,0,0);
