@@ -5,12 +5,16 @@
     /* used in index page section 1 */
     background: #000006;
 }
+body{
+    overflow-x:hidden;
+}
 /* --------------------------------------- Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width:100vw;
     height:100vh;
     /* border:5px solid red; */
 }
