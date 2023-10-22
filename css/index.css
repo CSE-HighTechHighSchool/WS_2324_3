@@ -18,20 +18,37 @@
 body{
     overflow-x:hidden;
 }
+* { box-sizing: border-box; }
 /* --------------------------------------- Hero and Navbar */
+.video-container{
+    width: 100vw;
+    height: 100vh;
+    z-index: -999;
+    overflow: hidden;
+}
+iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    z-index: -999;
+    transform: translate(-50%, -50%);
+    filter: brightness(200%);
+}
 .hero{
-    background-image: url("../img/clockInSpace.png");
+    /* background-image: url("../img/clockInSpace.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     width:100vw;
     height:100vh;
     /* border:5px solid red; */
-    display: flex; /* Use flex display to center its children */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center items vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text within the hero */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .logo-w{
     width:8%;
@@ -73,7 +90,7 @@ body{
 }
 
 .navbar{
-    z-index: 999;
+    z-index: 1000;
     background:rgba(0,0,0,0);
     backdrop-filter: blur(0px);
     transition: 0.25s background ease, 0.25s backdrop-filter ease;
