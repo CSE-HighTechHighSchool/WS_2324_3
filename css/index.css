@@ -120,8 +120,8 @@ body{
     padding:10px 30px;
 }
 .about-btn{
-    background:rgba(0,0,0,0);
-    backdrop-filter: blur(80px);
+    background:rgba(0,0,0,0.3);
+    backdrop-filter: blur(40px);
     transition: 0.5s transform ease-in-out, 0.5s border ease-in-out;
 }
 .about-btn:hover{
