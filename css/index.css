@@ -15,6 +15,9 @@
 ::-webkit-scrollbar-track{
     border:none;
 }
+body{
+    overflow-x:hidden;
+}
 /* --------------------------------------- Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
