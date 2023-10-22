@@ -5,6 +5,16 @@
     /* used in index page section 1 */
     background: #000006;
 }
+::-webkit-scrollbar{
+    width:10px;
+    background-color: #1C2333;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #3C445C;
+}
+::-webkit-scrollbar-track{
+    border:none;
+}
 /* --------------------------------------- Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
