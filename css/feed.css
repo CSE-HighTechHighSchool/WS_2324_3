@@ -1,0 +1,43 @@
+.text-dgray{
+    color: #94A3B8;
+}
+/* --------------------------------------- Hero and Navbar */
+.hero{
+    background-image: url("../img/clockInSpace.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+    /* border:5px solid red; */
+}
+.logo-w{
+    width:8%;
+}
+
+.landing-title {
+    font-size: 60px;
+}
+
+.hero-text {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+/* navbar item transitions (color + transform */
+.nav-link {
+    color: #94A3B8; /* Base color */
+    transition: 0.5s color linear; /* Transition for color change */
+}
+.nav-link:hover {
+    color: black;
+}
+.navbar{
+    background:rgba(0,0,0,0);
+}
+.nb-background-color {
+    background-color: #E2E8F0;
+}
+.nbMenuItem {
+    font-size: 30px;
+    color: #475569;
+}
