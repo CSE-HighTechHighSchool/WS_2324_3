@@ -31,7 +31,7 @@ iframe {
     min-height: 100%;
     z-index: -999;
     transform:scale(1.2);
-    filter: brightness(200%);
+    filter: brightness(69%);
 }
 /* #myVideo {
     position: fixed;

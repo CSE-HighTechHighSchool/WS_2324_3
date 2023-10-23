@@ -1,4 +1,4 @@
-// navbar transparency scrolling effect
+//------------------------------------------------------------------------------------------ navbar transparency scrolling effect
 const navbar = document.querySelector('.navbar')
 
 window.addEventListener('scroll', () => {
@@ -9,6 +9,7 @@ window.addEventListener('scroll', () => {
   }
 })
 
+//------------------------------------------------------------------------------------------ iframe speed adjustment
 if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
   console.log("test")
   var tag = document.createElement('script');
@@ -16,20 +17,10 @@ if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
-
 console.log("YT: ", YT)
 
-// const playbackRate = 1;
-// const data = {event: 'command', func: 'setPlaybackRate', args: [playbackRate, true]};
-// const message = JSON.stringify(data);
-// console.log(document.querySelector("iframe"))
-// const iframe = document.querySelector("iframe").src
-// console.log("iframe: ", iframe)
-// const frame2 = iframe.document.querySelectorAll("*")
-// console.log("video: ", frame2)
-// const test = window.frames[0].document
-// console.log("test: ", test)
 var player;
+let PLAYBACK_RATE = 0.75;
 function onYouTubePlayerAPIReady() {
   player = new YT.Player('player', {
     height: '385',
@@ -40,38 +31,59 @@ function onYouTubePlayerAPIReady() {
       'onReady': onPlayerReady
     }
   });
-
   console.log("YT: ", YT)
 }
-
 function onPlayerReady(event) {
   console.log("event: ", event)
   event.target.playVideo()
-  console.log("stfu: ", Object.keys(event.target))
-  console.log("3esedf: ", event.target.getAvailablePlaybackRates())
-  event.target.setPlaybackRate(0.25)
+  console.log("keys: ", Object.keys(event.target))
+  console.log("avaliablePlaybacks: ", event.target.getAvailablePlaybackRates())
+  event.target.setPlaybackRate(PLAYBACK_RATE)
 }
-
 onYouTubePlayerAPIReady()
 
-// video.defaultPlaybackRate = 20.0;
-
-
-// zoom out + fade out hero parallax
+//------------------------------------------------------------------------------------------ zoom out + fade out hero parallax
 const hero = document.querySelector("main")
 const zoomElement = document.querySelector(".zoom");
 const MAX_ZOOM = 1;
 const MIN_OPACITY = 0;
+let prevScrollPosition = 0;
 
 document.addEventListener("scroll", function() {
   const scrollPosition = window.scrollY;
-  const zoom = 1 + scrollPosition / (window.innerHeight * 2);
-  const opacity = 1 - scrollPosition / (window.innerHeight * 2);
+  console.log(`scroll pos: ${scrollPosition}`);
+  const scrollDirection = scrollPosition > prevScrollPosition ? "down" : "up";
+  console.log(`scroll dir: ${scrollDirection}`)
   
+  prevScrollPosition = scrollPosition;
+
+  const zoom = 1 + scrollPosition / (window.innerHeight/1.5);
+  const opacity = 1 - scrollPosition / (window.innerHeight/1.5);
   zoomElement.style.transform = `scale(${Math.max(zoom, MAX_ZOOM)})`;
   zoomElement.style.opacity = Math.max(opacity, MIN_OPACITY);
 
   if (scrollPosition < 0) {
     window.scrollTo(0, 0);
+  } else {
+    // adjust playback rate based on scroll position (both ways)
+    switch (scrollPosition) {
+      case 100:
+        PLAYBACK_RATE = 1;
+        break;
+      case 200:
+        PLAYBACK_RATE = 1.25;
+        break;
+      case 300:
+        PLAYBACK_RATE = 1.5;
+        break;
+      case 400:
+        PLAYBACK_RATE = 1.75;
+        break;
+      case 500:
+        PLAYBACK_RATE = 2;
+        break;
+    }
+    console.log(PLAYBACK_RATE);
+    player.setPlaybackRate(PLAYBACK_RATE);
   }
 });
