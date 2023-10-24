@@ -1,6 +1,5 @@
 //------------------------------------------------------------------------------------------ navbar transparency scrolling effect
 const navbar = document.querySelector('.navbar')
-
 window.addEventListener('scroll', () => {
   if (window.scrollY > 10) {
     navbar.classList.add('scrolled')
@@ -66,22 +65,16 @@ document.addEventListener("scroll", function() {
     window.scrollTo(0, 0);
   } else {
     // adjust playback rate based on scroll position (both ways)
-    switch (scrollPosition) {
-      case 100:
-        PLAYBACK_RATE = 1;
-        break;
-      case 200:
-        PLAYBACK_RATE = 1.25;
-        break;
-      case 300:
-        PLAYBACK_RATE = 1.5;
-        break;
-      case 400:
-        PLAYBACK_RATE = 1.75;
-        break;
-      case 500:
-        PLAYBACK_RATE = 2;
-        break;
+    if (scrollPosition <= 100) {
+      PLAYBACK_RATE = 1;
+    } else if (scrollPosition <= 200) {
+      PLAYBACK_RATE = 1.25;
+    } else if (scrollPosition <= 300) {
+      PLAYBACK_RATE = 1.5;
+    } else if (scrollPosition <= 400) {
+      PLAYBACK_RATE = 1.75;
+    } else if (scrollPosition <= 500) {
+      PLAYBACK_RATE = 2;
     }
     console.log(PLAYBACK_RATE);
     player.setPlaybackRate(PLAYBACK_RATE);
