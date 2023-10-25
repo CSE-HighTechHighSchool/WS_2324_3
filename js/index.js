@@ -61,6 +61,12 @@ document.addEventListener("scroll", function() {
   zoomElement.style.transform = `scale(${Math.max(zoom, MAX_ZOOM)})`;
   zoomElement.style.opacity = Math.max(opacity, MIN_OPACITY);
 
+  if (opacity === 0) {
+    zoomElement.style.pointerEvents = 'none';
+  } else {
+    zoomElement.style.pointerEvents = 'auto';
+  }
+
   if (scrollPosition < 0) {
     window.scrollTo(0, 0);
   } else {
