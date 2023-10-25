@@ -19,14 +19,12 @@ body{
     overflow-x:hidden;
 }
 * { box-sizing: border-box; }
+:root{
+    --animation-duration: 30s;
+}
 /* --------------------------------------- Hero and Navbar */
 .video-container{
     overflow: hidden;
-}
-
-.landing-about-title {
-    font-size: 65px;
-    margin-left: 100px;
 }
 
 .text-gradient {
@@ -34,17 +32,6 @@ body{
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-}
-
-.see-more-button {
-    cursor: pointer;
-    opacity: 0.8;
-    transition: 0.15s;
-}
-
-.see-more-button:hover {
-    opacity: 1;
-    transform: translateY(-1);
 }
 
 iframe {
@@ -220,4 +207,50 @@ iframe {
     opacity: 1;
     right: 0;
 }  
-/* --------------------------------------- Index page section 1 */
+/* --------------------------------------- Index page section 1 (regular css & the scroller) */
+.landing-about-title {
+    font-size: 65px;
+    margin-left: 100px;
+}
+.landing-about-info {
+    font-size: 35px;
+    margin-left: 100px;
+    font-weight:normal;
+}
+.see-more-button {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.15s ease;
+}
+.see-more-button:hover {
+    opacity: 1;
+    transform: translateY(-1);
+}
+
+.scroller{
+    max-width: 2000px;
+    z-index: 500;
+}
+.scroller[data-animated="true"] {
+    /* border: 5px solid lime;       for debugging purposes*/
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.scroller[data-animated="true"] .scroller-inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--animation-duration, 30s) linear infinite;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
