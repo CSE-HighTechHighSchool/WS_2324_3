@@ -25,8 +25,26 @@ body{
 }
 
 .landing-about-title {
-    font-size: 75px;
+    font-size: 65px;
     margin-left: 100px;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #EA7A6A, #4103DE);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.see-more-button {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.15s;
+}
+
+.see-more-button:hover {
+    opacity: 1;
+    transform: translateY(-1);
 }
 
 iframe {
