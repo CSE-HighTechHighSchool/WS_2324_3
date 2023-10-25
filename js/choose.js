@@ -53,6 +53,3 @@ $(document).ready(function() {
             .append(createDesc(desc))
     })
 })
-
-
-//---------------------------------------------------- fade scroll for choose area
