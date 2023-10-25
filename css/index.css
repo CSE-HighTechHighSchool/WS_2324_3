@@ -23,6 +23,12 @@ body{
 .video-container{
     overflow: hidden;
 }
+
+.landing-about-title {
+    font-size: 75px;
+    margin-left: 100px;
+}
+
 iframe {
     position: absolute;
     left: 0;

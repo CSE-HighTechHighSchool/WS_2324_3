@@ -66,9 +66,9 @@ document.addEventListener("scroll", function() {
   } else {
     // adjust playback rate based on scroll position (both ways)
     if (scrollPosition <= 100) {
-      PLAYBACK_RATE = 1;
+      PLAYBACK_RATE = 0.75;
     } else if (scrollPosition <= 200) {
-      PLAYBACK_RATE = 1.25;
+      PLAYBACK_RATE = 1;
     } else if (scrollPosition <= 300) {
       PLAYBACK_RATE = 1.5;
     } else if (scrollPosition <= 400) {
