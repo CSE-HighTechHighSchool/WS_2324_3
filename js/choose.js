@@ -33,12 +33,12 @@ $(document).ready(function() {
             // height: "200px",
             // width: "175px",
             minWidth: "150px",
-            width: "25%",
+            width: "23%",
             aspectRatio: "9/11",
             border: "1px solid black",
             borderRadius: "8px",
             borderColor: "#94a3b8",
-            padding: "22px",
+            padding: "25px",
             aspectRatio: "3/4",
             margin: "10px",
             display: "flex",
@@ -53,3 +53,6 @@ $(document).ready(function() {
             .append(createDesc(desc))
     })
 })
+
+
+//---------------------------------------------------- fade scroll for choose area
