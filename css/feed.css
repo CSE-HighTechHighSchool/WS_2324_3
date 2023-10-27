@@ -1,6 +1,15 @@
 .text-dgray{
     color: #94A3B8;
 }
+.gradient{
+    background: linear-gradient(to right, #EA7A6A, #4103DE);
+    background-size:100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    padding: 5px;
+}
 /* --------------------------------------- Hero and Navbar */
 .hero{
     background-image: url("../img/clockInSpace.png");
