@@ -33,14 +33,15 @@ $(document).ready(function() {
         const name = $(this).attr("data-name")
         const desc = $(this).attr("data-desc")
         const person = $(this).attr("data-person")
-
+        const isIndex = $(this).attr("isIndex")
+        console.log("isIndex: ", isIndex)
         console.log("person: ", person)
 
         $(this).css({
             // height: "200px",
             // width: "175px",
             minWidth: "150px",
-            width: "4%",
+            width: (isIndex==="true") ? "4%" : "23%",
             aspectRatio: "9/11",
             border: "1px solid black",
             borderRadius: "8px",

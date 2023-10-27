@@ -89,7 +89,7 @@ document.addEventListener("scroll", function() {
 
 
 
-
+//------------------------------------------------------------------------------------------ infinite scrolling animation
 const scrollers = document.querySelectorAll(".scroller");
 
 function addAnimation() {
@@ -113,6 +113,7 @@ function addAnimation() {
 }
 addAnimation();
 
+//------------------------------------------------------------------------------------------ dotted background
 const dotsContainer = $(".dots-container")[0]
 
 console.log("dots: ", dotsContainer.offsetHeight)

@@ -251,6 +251,9 @@ iframe {
     max-width: 2000px;
     z-index: 500;
 }
+.scroller-inner div{
+    width:4%;
+}
 .scroller[data-animated="true"] {
     /* border: 5px solid lime;       for debugging purposes*/
     overflow: hidden;
@@ -268,14 +271,13 @@ iframe {
     flex-wrap: nowrap;
     animation: scroll var(--animation-duration, 30s) linear infinite;
 }
-
 @keyframes scroll {
     to {
         transform: translate(calc(-50% - 0.5rem));
     }
 }
 
-/* Index page section 2 + bars */
+/* --------------------------------------- Index page section 2 + bars */
 
 .gradient-bar {
     background: linear-gradient(45deg, #EA7A6A, #4103DE);
