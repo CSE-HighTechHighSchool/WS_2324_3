@@ -10,17 +10,17 @@ $(document).ready(function() {
         width: "70px",
         height: "70px",
     })
-    const createName = name => $(`<h1>${name}</h1>`).css({
+    const createName = (name, dark) => $(`<h1>${name}</h1>`).css({
         fontSize: "20px",
         fontWeight: "semibold",
         width: "100%",
-        color: "#1e293b",
+        color: dark !== "dark" ? "#1e293b" : "#e2e8f0",
         textAlign: "center",
     })
 
-    const createDesc = desc => $(`<p>${desc}</p>`).css({
+    const createDesc = (desc, dark) => $(`<p>${desc}</p>`).css({
         fontSize: "16px",
-        color: "#475569",
+        color: dark !== "dark" ? "#475569" : "#cbd5e1",
         textAlign: "center",
     })
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
             // height: "200px",
             // width: "175px",
             minWidth: "150px",
-            width: "23%",
+            width: "4%",
             aspectRatio: "9/11",
             border: "1px solid black",
             borderRadius: "8px",
@@ -52,8 +52,10 @@ $(document).ready(function() {
             flexDirection: "column",
             paddingTop: "50px",
             // justifyContent: "center",
+            height: "400px",
             alignItems: "center",
-            gap: "8px"
+            gap: "8px",
+            flexShrink: 0
         }).append(createImg(img))
             .append(createSpacer())
             .append(createName(name))
