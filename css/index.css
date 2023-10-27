@@ -69,6 +69,12 @@ iframe {
 }
 .logo-w{
     width:8%;
+    transform: rotateX(0deg);
+    transition: 0.35s;
+}
+
+.logo-w:hover {
+    transform: rotateX(180deg);
 }
 
 .landing-title {
@@ -173,11 +179,10 @@ iframe {
     text-align: center;
     font-size: 17px;
     padding: 16px;
-    width: 130px;
     transition: all .6s;
+    min-width: 100px;
     cursor: pointer;
     align-items: center;
-    min-width: 150px;
     margin: 5px;
     flex-wrap: nowrap;
 }
@@ -198,7 +203,7 @@ iframe {
     transition: .6s;
 }
 .chatnow-btn:hover {
-    min-width: 200px;
+    min-width: 175px;
 }
 .chatnow-btn:hover a {
     padding-right: 25px;
@@ -227,6 +232,21 @@ iframe {
     transform: translateY(-1);
 }
 
+@keyframes pulse-animation {
+    0% {
+        width: 8px;
+        height: 8px;
+    }
+    50% {
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        width: 8px;
+        height: 8px;
+    }
+}
+
 .scroller{
     max-width: 2000px;
     z-index: 500;
@@ -253,4 +273,11 @@ iframe {
     to {
         transform: translate(calc(-50% - 0.5rem));
     }
+}
+
+/* Index page section 2 + bars */
+
+.gradient-bar {
+    background: linear-gradient(45deg, #EA7A6A, #4103DE);
+    height: 40px;
 }

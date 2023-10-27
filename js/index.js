@@ -112,3 +112,44 @@ function addAnimation() {
   });
 }
 addAnimation();
+
+const dotsContainer = $(".dots-container")[0]
+
+console.log("dots: ", dotsContainer.offsetHeight)
+
+const xStart = 20
+const xStep = 40
+const xEnd = Math.floor(dotsContainer.offsetWidth / 40) + 1
+
+const yStep = 40
+const yEnd = Math.floor(dotsContainer.offsetHeight / 40)
+
+const createDot = (xRow, yRow, random, delay) => $("<span></span>").css({
+  position: "absolute",
+  left: `${10+xRow*xStep}px`,
+  top: `${10+yRow*yStep}px`,
+  borderRadius: "50%",
+  width: "8px",
+  height: "8px",
+  zIndex: 0,
+  backgroundColor: random === 1 ? "#94a3b8" : "#cbd5e1",
+  animation: "pulse-animation 2s infinite ease-in-out",
+  animationDelay: `${delay}ms`
+})[0]
+
+console.log("testing")
+console.log("yEnd: ", yEnd, ", ")
+// console.log("test dot: ", createDot(0, 0))
+
+for(let i = 0; i < yEnd; i++) {
+  for(let j = 0; j < xEnd; j++) {
+
+    const random = Math.floor(Math.random() * 2)
+    const delay = Math.floor(Math.random() * 1000)
+
+    console.log("test")
+    dotsContainer.append(createDot(j, i, random, delay));
+  }
+}
+
+console.log("end")
