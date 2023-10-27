@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Choose Feed</title>
@@ -13,53 +13,54 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/choose.js"></script>
   </head>
-  <body style="width: 100vw; height: 100vh; overflow: hidden;">
+  <body style="width: 100vw; height: 100vh; overflow:hidden;">
     <div class="w-100 bg-white fixed-top">
       <nav class="navbar navbar-expand-lg nav-bg navbar-dark nb-background-color rounded-pill mt-3 mx-5">
         <div class="container-fluid">
           <div class="d-flex align-items-center">
-            <img src="img/time_travel_logo.png" alt="EraExchange Logo" class="logo-w mx-2">
-            <h1 class="pt-2 text-dark">EraExchange</h1>
+            
+            <img class="logo-w" src="img/time_travel_logo.png" alt="logo">
+            <a class="d-flex text-decoration-none" href="index.html">
+              <h1 class="gradient" style="font-size: 50px;">EraExchange</h1>
+            </a>
           </div>
 
-          <div class="collapse navbar-collapse"></div>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link hover-underline-animation nbMenuItem mx-3">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="chat.html" class="nav-link hover-underline-animation nbMenuItem mx-5">Chat</a>
-                </li>
-            </ul>
-          </div>
-
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a href="choose.html" class="nav-link hover-underline-animation nbMenuItem mx-3 text-nowrap">Feed</a>
+              </li>
+              <li class="nav-item">
+                  <a href="chat.html" class="nav-link hover-underline-animation nbMenuItem mx-3 text-nowrap">My Chats</a>
+              </li>
+          </ul>
+        </div>
       </nav>
     </div>
-    <div style="margin-top: 90px; height: calc(100vh - 90px); min-height: 0;">
+    <div class="d-flex flex-column justify-content-center" style="margin-top: 70px; height: calc(100vh - 90px); min-height: 0;">
       <div class=" text-center" style="flex: 0 0 auto; min-height: 0">
-        <h1 class="pt-3 headcolor" style="font-size: 80px;">Choose a Person</h1>
+        <h1 class="mt-5 pt-3 gradient" style="font-size: 80px;">Choose a Feed</h1>
+        <h2>And start chatting!</h2>
       </div>
-      <div style="height: 40px; flex: 0 0 40px;"></div>
+      
       <!--Testing card-->
-      <div style="margin-top: 80px; width: 65%; min-height: 0; flex: 1 1 0; margin: 0 auto; display:flex; flex-direction:row; flex-wrap: wrap; overflow-y: auto; padding: 15px 15px;">
-        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-
-        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-
-        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
-        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+      <div id="content" class="hidden-scroll" style="margin-top: 20px; width: 70%; min-height: 0; flex: 1 1 0; margin: 0 auto; display:flex; flex-direction:row; justify-content: center; flex-wrap: wrap; overflow-y: auto; padding: 15px 15px;">
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-person="gwash" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-person="alinc" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-person="troose" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-person="gwash" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-person="alinc" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-person="troose" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-person="gwash" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-person="alinc" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-person="troose" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        
+        <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-person="gwash" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-person="alinc" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
+        <div class="person-card" data-img="img/trose.png" data-name="Theodore Roosevelt" data-person="troose" data-desc="A very epic president who did a lot of things that were very cool with the revolutionary war"></div>
       </div>
     </div>
-</body>
+    <footer class="d-flex align-content-end"/>
+  </body>
 </html>
