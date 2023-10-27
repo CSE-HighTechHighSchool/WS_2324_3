@@ -1,4 +1,3 @@
-
 function reroute(person) {
     console.log("bruh")
     window.location.href = `feed/${person}.html`
@@ -6,7 +5,6 @@ function reroute(person) {
 
 $(document).ready(function() {
     // attributes: data-img for img src, data-name for name, data-desc for desc
-
     const createImg = src => $(`<img src="${src}" height="66" width="66">`).css({
         borderRadius: "50%",
         width: "70px",
