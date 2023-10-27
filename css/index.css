@@ -194,7 +194,7 @@ iframe {
     transition: .6s;
 }
 .chatnow-btn a:after {
-    content: 'Â»';
+    content: '»';
     position: absolute;
     opacity: 0;
     top: 0;
@@ -280,8 +280,4 @@ iframe {
 .gradient-bar {
     background: linear-gradient(45deg, #EA7A6A, #4103DE);
     height: 40px;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> parallax-landing
