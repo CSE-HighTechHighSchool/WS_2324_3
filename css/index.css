@@ -5,21 +5,76 @@
     /* used in index page section 1 */
     background: #000006;
 }
+::-webkit-scrollbar{
+    width:10px;
+    background-color: #1C2333;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #3C445C;
+}
+::-webkit-scrollbar-track{
+    border:none;
+}
 body{
     overflow-x:hidden;
 }
+* { box-sizing: border-box; }
+:root{
+    --animation-duration: 30s;
+}
 /* --------------------------------------- Hero and Navbar */
+.video-container{
+    overflow: hidden;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, #EA7A6A, #4103DE);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -999;
+    transform:scale(1.2);
+    filter: brightness(69%);
+}
+/* #myVideo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: brightness(125%);
+    z-index: -999;
+} */
 .hero{
-    background-image: url("../img/clockInSpace.png");
+    /* background-image: url("../img/clockInSpace.png");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     width:100vw;
     height:100vh;
     /* border:5px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .logo-w{
     width:8%;
+    transform: rotateX(0deg);
+    transition: 0.35s;
+}
+
+.logo-w:hover {
+    transform: rotateX(180deg);
 }
 
 .landing-title {
@@ -27,24 +82,8 @@ body{
 }
 .hero-text {
     font-size: 24px;
-    margin-left: 20px;
-}
-.hero-text:hover{
-    animation: shake 0.5s;
-    animation-iteration-count: infinite;
-}
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    /* margin-left: 20px; */
+    text-align: center;
 }
 
 /* navbar item transitions (color + transform */
@@ -74,7 +113,7 @@ body{
 }
 
 .navbar{
-    z-index: 999;
+    z-index: 1000;
     background:rgba(0,0,0,0);
     backdrop-filter: blur(0px);
     transition: 0.25s background ease, 0.25s backdrop-filter ease;
@@ -121,6 +160,8 @@ body{
     padding:10px 30px;
 }
 .about-btn{
+    background:rgba(0,0,0,0.3);
+    backdrop-filter: blur(40px);
     transition: 0.5s transform ease-in-out, 0.5s border ease-in-out;
 }
 .about-btn:hover{
@@ -138,11 +179,10 @@ body{
     text-align: center;
     font-size: 17px;
     padding: 16px;
-    width: 130px;
     transition: all .6s;
+    min-width: 100px;
     cursor: pointer;
     align-items: center;
-    min-width: 150px;
     margin: 5px;
     flex-wrap: nowrap;
 }
@@ -154,7 +194,7 @@ body{
     transition: .6s;
 }
 .chatnow-btn a:after {
-    content: '»';
+    content: 'Â»';
     position: absolute;
     opacity: 0;
     top: 0;
@@ -163,7 +203,7 @@ body{
     transition: .6s;
 }
 .chatnow-btn:hover {
-    min-width: 200px;
+    min-width: 175px;
 }
 .chatnow-btn:hover a {
     padding-right: 25px;
@@ -172,8 +212,72 @@ body{
     opacity: 1;
     right: 0;
 }  
-
-.ml-hero{
+/* --------------------------------------- Index page section 1 (regular css & the scroller) */
+.landing-about-title {
+    font-size: 65px;
     margin-left: 100px;
 }
-/* --------------------------------------- Index page section 1 */
+.landing-about-info {
+    font-size: 35px;
+    margin-left: 100px;
+    font-weight:normal;
+}
+.see-more-button {
+    cursor: pointer;
+    opacity: 0.8;
+    transition: all 0.15s ease;
+}
+.see-more-button:hover {
+    opacity: 1;
+    transform: translateY(-1);
+}
+
+@keyframes pulse-animation {
+    0% {
+        width: 8px;
+        height: 8px;
+    }
+    50% {
+        width: 12px;
+        height: 12px;
+    }
+    100% {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+.scroller{
+    max-width: 2000px;
+    z-index: 500;
+}
+.scroller[data-animated="true"] {
+    /* border: 5px solid lime;       for debugging purposes*/
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.scroller[data-animated="true"] .scroller-inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--animation-duration, 30s) linear infinite;
+}
+
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+/* Index page section 2 + bars */
+
+.gradient-bar {
+    background: linear-gradient(45deg, #EA7A6A, #4103DE);
+    height: 40px;
+}
