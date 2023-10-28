@@ -44,11 +44,32 @@
 
 /* navbar item transitions (color + transform */
 .nav-link {
-    color: #94A3B8; /* Base color */
-    transition: 0.5s color linear; /* Transition for color change */
+    background-image: linear-gradient(to right,#EA7A6A,#4103DE 50%,#000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+.nav-link:before{
+    content: '';
+    background: #4103DE;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
 }
 .nav-link:hover {
-    color: black;
+   background-position: 0;
+}
+.nav-link:hover::before{
+    width: 100%;
 }
 .navbar{
     background:rgba(0,0,0,0);
@@ -59,6 +80,27 @@
 .nbMenuItem {
     font-size: 30px;
     color: #475569;
+}
+
+/* Body */
+.image-container{
+    width: 90px;
+    height: 90px;
+}
+.image-container img {
+    width: 80px;
+    height: 80px;
+    left: 5px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.image-container::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(#EA7A6A, #4103DE);
+    z-index: 0;
 }
 
 /* FOoter */
