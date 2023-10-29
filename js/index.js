@@ -57,11 +57,15 @@ document.addEventListener("scroll", function() {
   
   prevScrollPosition = scrollPosition;
 
+  // adjust zoom/opacity based on scroll position based on the window height
   const zoom = 1 + scrollPosition / (window.innerHeight/1.5);
   const opacity = 1 - scrollPosition / (window.innerHeight/1.5);
+
+  // cap the zoom/opacity at max zoom and min opacity
   zoomElement.style.transform = `scale(${Math.max(zoom, MAX_ZOOM)})`;
   zoomElement.style.opacity = Math.max(opacity, MIN_OPACITY);
 
+  // disable pointer if the items disappear
   if (opacity === 0) {
     zoomElement.style.pointerEvents = 'none';
   } else {
@@ -103,6 +107,7 @@ function addAnimation() {
     const scrollerContent = Array.from(scrollerInner.children);
 
     // For each item in the array, clone it, add aria-hidden to it, and add it into the `.scroller-inner`
+    // Allows seamless looping
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);
@@ -139,7 +144,6 @@ const createDot = (xRow, yRow, random, delay) => $("<span></span>").css({
 
 console.log("testing")
 console.log("yEnd: ", yEnd, ", ")
-// console.log("test dot: ", createDot(0, 0))
 
 for(let i = 0; i < yEnd; i++) {
   for(let j = 0; j < xEnd; j++) {

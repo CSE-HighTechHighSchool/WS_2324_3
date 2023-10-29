@@ -17,6 +17,7 @@
     <script src="https://www.youtube.com//s//player//dd34ec3d//www-widgetapi.vflset//www-widgetapi.js"></script>
 </head>
 <body class="bg-dblack">
+    <!-------------------------------- Navbar -->
     <nav class="navbar navbar-expand-lg nav-bg p-2 fixed-top">
         <div class="container-fluid">
             <div class="d-flex align-items-center">
@@ -48,18 +49,14 @@
             </div>
         </div>
     </nav>
+
+    <!-------------------------------- Landing + Video BG -->
     <div class="video-background">
         <iframe id="player" src="https://www.youtube.com/embed/lM7KQYHYsJs?enablejsapi=1&amp;si=L1k_U-BPRObmfjer&amp;controls=0&amp;clip=Ugkx1sqHO8B4xF4hGLLsm3GRCBXVur_96qjb&amp;clipt=EJ-0Axj_iAc&autoplay=1&mute=1&playsinline=1&loop=1&controls=0&origin=http://localhost:5500" type="text/html" width="640" height="390"  ></iframe>
-        <!--  -->
-        <!-- <div id="player"></div> -->
     </div>
     <main class="main">
-        <!-- <video autoplay muted loop id="myVideo">
-            <source src="videos/galaxy.mp4#t=15" type="video/mp4">
-        </video> -->
         <div class="hero">
             <div class="zoom navbar-inner h-100 d-flex justify-content-center">
-                <!-- hero text -->
                 <div class="d-flex flex-column justify-content-center h-100" style="padding: 12% 0px; z-index: 999;">
                     <h1 class="text-light font-weight-bold p-4 landing-title">Talk with George Washington</h1>
                     <div class="d-flex justify-content-center">
@@ -67,11 +64,7 @@
                             Step back in time and have one-on-one chats with famous people throughout history.
                         </p>
                     </div>
-                    <!-- hero buttons -->
                     <div class="d-flex py-5 mx-5 justify-content-center">
-                        <!-- <button class="btn shadow-none mx-5 rounded borderless about-btn">
-                            <a href="" class="text-dgray btn-text">About</a>
-                        </button> -->
                         <button class="d-flex btn shadow-none mx-5 rounded grayToGradient gradient borderless chatnow-btn">
                             <a href="choose.html" class="text-light btn-text">Chat Now</a>
                         </button>
@@ -80,6 +73,8 @@
             </div>
         </div>
     </main>
+
+    <!-------------------------------- Infinite scroller section -->
     <div class="text-light">
         <div style="background: linear-gradient(180deg, #00000011, #000006ff); height: 100px"></div>
         <div class="w-100 h-75" style="padding: 150px 100px; background-color: #000006">
@@ -92,27 +87,29 @@
             <hr class="w-25" style="margin-left: 175px; border-width: 2px">
             <div style="height: 20px"></div>
             <div class="d-flex flex-row m-auto" style="width: 85%; margin-left: 7.5%; gap: 30px;">
-                <div class="scroller position-relative">
+                <div class="scroller position-relative" style="z-index:1;">
                     <div class="scroller-inner d-flex">
                         <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="I am a very epic president that is very cool and likes to have a lot of fun. I fought in the revolutionary war and killed a lot of British people." data-dark="dark"></div>
-                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit but never smiles. I banned slavery and love my top hat." data-dark="dark"></div>
+                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit. But I never smile. I also banned slavery and love my top hat." data-dark="dark"></div>
                         <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="I am a very epic president that is very cool and likes to have a lot of fun. I fought in the revolutionary war and killed a lot of British people." data-dark="dark"></div>
-                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit but never smiles. I banned slavery and love my top hat." data-dark="dark"></div>
+                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit. But I never smile. I also banned slavery and love my top hat." data-dark="dark"></div>
                         <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="I am a very epic president that is very cool and likes to have a lot of fun. I fought in the revolutionary war and killed a lot of British people." data-dark="dark"></div>
-                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit but never smiles. I banned slavery and love my top hat." data-dark="dark"></div>
+                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit. But I never smile. I also banned slavery and love my top hat." data-dark="dark"></div>
                         <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-desc="I am a very epic president that is very cool and likes to have a lot of fun. I fought in the revolutionary war and killed a lot of British people." data-dark="dark"></div>
-                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit but never smiles. I banned slavery and love my top hat." data-dark="dark"></div>
+                        <div class="person-card" data-img="img/alinc.png" data-name="Abraham Lincoln" data-desc="I am a very cool president and I'm super lit. But I never smile. I also banned slavery and love my top hat." data-dark="dark"></div>
                     </div>
                 </div>
-                <div class="p-5 d-flex flex-column gap-3 justify-content-center align-items-center see-more-button" class="width: 30%">
-                    <div class="see-more-button d-flex flex-column gap-3 justify-content-center align-items-center">
+                <div class="p-5 d-flex flex-column gap-3 justify-content-center align-items-center" class="width: 30%; z-index:50;">
+                    <a href="choose.html" class="text-decoration-none see-more-button d-flex flex-column gap-3 justify-content-center align-items-center">
                         <i class="fa fa-arrow-right text-gradient" style="font-size: 50px"></i>
                         <p class="text-gradient text-nowrap" style="font-weight: 600; font-size: 30px">See More</p>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-------------------------------- Dotted BG section -->
     <div class="w-100 gradient-bar"></div>
     <div class="bg-white w-100 position-relative dots-container d-flex justify-content-center align-items-center flex-column" style="height: 75vh">
         <div class="rounded-2" style="background-color: #E2E8F0aa; height: 110px; width: 65%;">
@@ -129,7 +126,7 @@
     </div>
     <div class="w-100 gradient-bar"></div>
 
-
+    <!-------------------------------- Footer -->
     <footer class="text-center text-lg-start text-white" style="background-color: #1C2333">
         <section class="pt-3">
           <div class="container text-center text-md-start mt-5">
@@ -165,9 +162,7 @@
             </div>
           </div>
         </section>
-        <!-- Section: Links  -->
   
-        <!-- Copyright -->
         <div class="text-center p-4 mt-3" style="background-color: rgba(0, 0, 0, 0.2)">
           © 2023 Copyright:
           <a class="text-white" href="../index.html">EraExchange.com</a>

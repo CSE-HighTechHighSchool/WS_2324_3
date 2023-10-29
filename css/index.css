@@ -1,10 +1,12 @@
 .text-dgray{
+    /* custom font color used throughout */
     color: #94A3B8;
 }
 .bg-dblack{
     /* used in index page section 1 */
     background: #000006;
 }
+/* custom scrollbar */
 ::-webkit-scrollbar{
     width:10px;
     background-color: #1C2333;
@@ -15,18 +17,16 @@
 ::-webkit-scrollbar-track{
     border:none;
 }
+
 body{
     overflow-x:hidden;
 }
 * { box-sizing: border-box; }
 :root{
-    --animation-duration: 30s;
+    /* variable for changing infinite scoller speed */
+    --animation-dur: 30s;
 }
 /* --------------------------------------- Hero and Navbar */
-.video-container{
-    overflow: hidden;
-}
-
 .text-gradient {
     background: linear-gradient(45deg, #EA7A6A, #4103DE);
     color: transparent;
@@ -34,6 +34,9 @@ body{
     -webkit-background-clip: text;
 }
 
+.video-container{
+    overflow: hidden;
+}
 iframe {
     position: absolute;
     left: 0;
@@ -44,23 +47,9 @@ iframe {
     transform:scale(1.2);
     filter: brightness(69%);
 }
-/* #myVideo {
-    position: fixed;
-    left: 0;
-    top: 0;
-    min-width: 100%;
-    min-height: 100%;
-    filter: brightness(125%);
-    z-index: -999;
-} */
 .hero{
-    /* background-image: url("../img/clockInSpace.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover; */
     width:100vw;
     height:100vh;
-    /* border:5px solid red; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,28 +71,28 @@ iframe {
 }
 .hero-text {
     font-size: 24px;
-    /* margin-left: 20px; */
     text-align: center;
 }
 
 /* navbar item transitions (color + transform */
 .nav-link {
-    color: #94A3B8; /* Base color */
-    transition: 0.5s color linear; /* Transition for color change */
+    color: #94A3B8;
+    transition: 0.5s color linear;
 }
 .nav-link:hover {
     color: white;
 }
 .nav-item {
-    transition: 0.5s box-shadow linear, 0.5s transform ease-in-out; /* Transition for box-shadow and transform */
+    transition: 0.5s box-shadow linear, 0.5s transform ease-in-out;
 }
 .nav-item:hover {
     box-shadow: 0 5px 15px rgba(65, 3, 222, 0.5);
     transform: translateY(-10%);
 }
+
 .grayToGradient{
-    background-color: #000; /* Initial black and white background */
-    filter: grayscale(60%); /* Desaturate the button */
+    background-color: #000;
+    filter: grayscale(60%);
     transition: all 0.5s linear;
     cursor: pointer;
 }
@@ -224,30 +213,29 @@ iframe {
     font-weight:normal;
 }
 .see-more-button {
-    cursor: pointer;
-    opacity: 0.8;
+    cursor: default;
+    opacity: 0.6;
+    transform: translateY(0);
     transition: all 0.15s ease;
 }
 .see-more-button:hover {
     opacity: 1;
-    transform: translateY(-1);
+    /* transform: translateX(10px); */
+    animation: pulse-animation .75s infinite;
 }
-
 @keyframes pulse-animation {
     0% {
-        width: 8px;
-        height: 8px;
+        transform: translateX(0px);
     }
     50% {
-        width: 12px;
-        height: 12px;
+        transform: translateX(5px);
     }
     100% {
-        width: 8px;
-        height: 8px;
+        transform: translateX(0px);
     }
 }
 
+/* infinite scroller animation and styling */
 .scroller{
     max-width: 2000px;
     z-index: 500;
@@ -256,7 +244,6 @@ iframe {
     width:4%;
 }
 .scroller[data-animated="true"] {
-    /* border: 5px solid lime;       for debugging purposes*/
     overflow: hidden;
     -webkit-mask: linear-gradient(
         90deg,
@@ -270,7 +257,7 @@ iframe {
 .scroller[data-animated="true"] .scroller-inner {
     width: max-content;
     flex-wrap: nowrap;
-    animation: scroll var(--animation-duration, 30s) linear infinite;
+    animation: scroll var(--animation-dur, 30s) linear infinite;
 }
 @keyframes scroll {
     to {
