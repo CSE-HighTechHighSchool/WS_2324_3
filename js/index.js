@@ -146,7 +146,7 @@ for(let i = 0; i < yEnd; i++) {
   for(let j = 0; j < xEnd; j++) {
 
     const random = Math.floor(Math.random() * 2)
-    const delay = Math.floor(Math.random() * 1000)
+    const delay = Math.floor((i+j)*100)
 
     console.log("test")
     dotsContainer.append(createDot(j, i, random, delay));
