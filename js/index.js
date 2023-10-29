@@ -1,6 +1,7 @@
 //------------------------------------------------------------------------------------------ navbar transparency scrolling effect
 const navbar = document.querySelector('.navbar')
 window.addEventListener('scroll', () => {
+  // if scrolled enough, enable transparency effect for navbar. otherwise, don't
   if (window.scrollY > 10) {
     navbar.classList.add('scrolled')
   } else {
@@ -101,9 +102,7 @@ function addAnimation() {
     const scrollerInner = scroller.querySelector(".scroller-inner");
     const scrollerContent = Array.from(scrollerInner.children);
 
-    // For each item in the array, clone it
-    // add aria-hidden to it
-    // add it into the `.scroller-inner`
+    // For each item in the array, clone it, add aria-hidden to it, and add it into the `.scroller-inner`
     scrollerContent.forEach((item) => {
       const duplicatedItem = item.cloneNode(true);
       duplicatedItem.setAttribute("aria-hidden", true);

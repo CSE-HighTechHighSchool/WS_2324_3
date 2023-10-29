@@ -40,7 +40,7 @@ $(document).ready(function() {
             // height: "200px",
             // width: "175px",
             minWidth: "150px",
-            width: dark==="dark" ? "4%" : "23%",
+            width: dark==="dark" ? "6%" : "23%",
             aspectRatio: "9/11",
             border: "1px solid black",
             borderRadius: "8px",
