@@ -1,0 +1,156 @@
+.text-dgray{
+    color: #94A3B8;
+}
+.gradient{
+    background: linear-gradient(to right, #EA7A6A, #4103DE);
+    background-size:100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    padding: 5px;
+}
+::-webkit-scrollbar{
+    width:10px;
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #888;
+}
+::-webkit-scrollbar-track{
+    border:none;
+}
+/* --------------------------------------- Hero and Navbar */
+.hero{
+    background-image: url("../img/clockInSpace.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh;
+}
+.logo-w{
+    width:7%;
+}
+
+.landing-title {
+    font-size: 60px;
+}
+
+.hero-text {
+    font-size: 24px;
+    margin-left: 20px;
+}
+
+/* navbar item transitions (color + transform */
+.nav-link {
+    background-image: linear-gradient(to right,#EA7A6A,#4103DE 50%,#000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.5s ease-in-out;
+}
+.nav-link:before{
+    content: '';
+    background: #4103DE;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.5s ease-in-out;
+}
+.nav-link:hover {
+   background-position: 0;
+}
+.nav-link:hover::before{
+    width: 100%;
+}
+.navbar{
+    background:rgba(0,0,0,0);
+}
+.nb-background-color {
+    background-color: #E2E8F0;
+}
+.nbMenuItem {
+    font-size: 30px;
+    color: #475569;
+}
+
+/* Body */
+.btn-sizing {
+    width:150px;
+    height:50px;
+    margin-left: auto;
+}
+
+.btn-text {
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 0;
+}
+
+/* profile picture */
+
+.image-container{
+    width: 90px;
+    height: 90px;
+}
+.image-container img {
+    width: 80px;
+    height: 80px;
+    left: 5px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.image-container::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: linear-gradient(#EA7A6A, #4103DE);
+    z-index: 0;
+}
+
+/* navigation links */
+.nav-btn{
+    padding:10px 30px;
+    background:linear-gradient(45deg, #EA7A6A, #4103DE);
+    backdrop-filter: blur(40px);
+    border:none;
+    transition: 0.5s transform ease-in-out, 0.5s border ease-in-out;
+}
+.nav-btn:hover{
+    transform: translateY(-10%);
+    box-shadow: 4px 4px 4px 4px #888;
+    border:none;
+}
+
+/* tweet styles */
+.tweet{
+    z-index:10;
+    transform: translateY(0);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -10px;
+    transition: all 0.5s ease;
+}
+.tweet:hover{
+    z-index:300;
+    transform: translateY(-15px);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -10px;
+}
+
+/* Footer */
+.prefooter{
+    height:100px;
+}
+.footer-item{
+    color:white;
+    transition: all 0.25s ease;
+}
+.footer-item:hover{
+    color: #4103DE;
+}

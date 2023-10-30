@@ -1,0 +1,298 @@
+.text-dgray{
+    /* custom font color used throughout */
+    color: #94A3B8;
+}
+.bg-dblack{
+    /* used in index page section 1 */
+    background: #000006;
+}
+/* custom scrollbar */
+::-webkit-scrollbar{
+    width:10px;
+    background-color: #1C2333;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #3C445C;
+}
+::-webkit-scrollbar-track{
+    border:none;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+* { box-sizing: border-box; }
+
+:root{
+    /* variable for changing infinite scoller speed */
+    --animation-dur: 30s;
+}
+
+/* --------------------------------------- Hero and Navbar */
+.text-gradient {
+    background: linear-gradient(45deg, #EA7A6A, #4103DE);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.video-container{
+    overflow: hidden;
+}
+
+/* positioning video frame */
+iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -999;
+    transform:scale(1.2);
+    filter: brightness(55%);
+}
+
+.hero{
+    width:100vw;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-w{
+    width:8%;
+    transform: rotateX(0deg);
+    transition: 0.35s;
+}
+
+.logo-w:hover {
+    transform: rotateX(180deg);
+}
+
+.landing-title {
+    font-size: 60px;
+}
+
+.hero-text {
+    font-size: 24px;
+    text-align: center;
+}
+
+/* navbar item transitions (color + transform */
+.nav-link {
+    color: #94A3B8;
+    transition: 0.5s color linear;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-item {
+    transition: 0.5s box-shadow linear, 0.5s transform ease-in-out;
+}
+
+.nav-item:hover {
+    box-shadow: 0 5px 15px rgba(65, 3, 222, 0.5);
+    transform: translateY(-10%);
+}
+
+.grayToGradient{
+    background-color: #000;
+    filter: grayscale(60%);
+    transition: all 0.5s linear;
+    cursor: pointer;
+}
+
+.grayToGradient:hover{
+    background-image: linear-gradient(to right, #EA7A6A, #4103DE); /* Apply gradient background on hover */
+    filter: none;
+}
+
+.navbar{
+    z-index: 1000;
+    background:rgba(0,0,0,0);
+    backdrop-filter: blur(0px);
+    transition: 0.25s background ease, 0.25s backdrop-filter ease;
+}
+
+.navbar.scrolled{
+    background:rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
+
+.navbar-inner {
+    /* make background darker */
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nb-background-color {
+    background-color: #E2E8F0;
+}
+
+.nbMenuItem {
+    font-size: 30px;
+    color: #475569;
+}
+
+.nbIndexItem {
+    font-size: 25px;
+}
+
+/* gradient utility class */
+.gradient {
+    background-image: linear-gradient(to right, #EA7A6A, #4103DE);
+    background-repeat: no-repeat;
+}
+
+.btn-sizing {
+    width:150px;
+    height:50px;
+    margin-left: auto;
+}
+
+.btn-text {
+    font-size: 25px;
+    text-decoration: none;
+    margin-right: 0;
+}
+
+/* --------------------------------------- Inside the hero: the text and the buttons */
+.w-35{
+    width:35%;
+}
+.nav-btn, .chatnow-btn{
+    padding:10px 30px;
+}
+.nav-btn{
+    background:rgba(0,0,0,0.3);
+    backdrop-filter: blur(40px);
+    border:none;
+    transition: 0.5s transform ease-in-out, 0.5s border ease-in-out;
+}
+.nav-btn:hover{
+    transform: translateY(-10%);
+    border: 1.5px solid #94A3B8;
+}
+
+/* Animation/Styles for the chat-now button element */
+.chatnow-btn {
+    display: flex;
+    border-radius: 4px;
+    background-color: #3d405b;
+    border: none;
+    color: #FFFFFF;
+    justify-content: start;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    transition: all .6s;
+    min-width: 140px;
+    cursor: pointer;
+    align-items: center;
+    margin: 5px;
+    flex-wrap: nowrap;
+}
+.chatnow-btn a {
+    cursor: pointer;
+    display: inline;
+    white-space: nowrap;
+    position: relative;
+    transition: .6s;
+}
+.chatnow-btn a:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    padding-left: 50px;
+    transition: .6s;
+}
+.chatnow-btn:hover {
+    min-width: 175px;
+}
+.chatnow-btn:hover a {
+    padding-right: 25px;
+}
+.chatnow-btn:hover a:after {
+    opacity: 1;
+    right: 0;
+}  
+/* --------------------------------------- Index page section 1 (regular css & the scroller) */
+.landing-about-title {
+    font-size: 65px;
+    margin-left: 100px;
+}
+.landing-about-info {
+    font-size: 35px;
+    margin-left: 100px;
+    font-weight:normal;
+}
+.see-more-button {
+    cursor: default;
+    opacity: 0.6;
+    transform: translateY(0);
+    transition: all 0.15s ease;
+}
+.see-more-button:hover {
+    opacity: 1;
+    /* transform: translateX(10px); */
+    animation: pulse-animation .75s infinite;
+}
+
+/* animation used for dots in dotscontainer */
+@keyframes pulse-animation {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* infinite scroller animation and styling */
+.scroller{
+    max-width: 2000px;
+    z-index: 500;
+}
+.scroller-inner div{
+    width:4%;
+}
+.scroller[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+}
+.scroller[data-animated="true"] .scroller-inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--animation-dur, 30s) linear infinite;
+}
+@keyframes scroll {
+    to {
+        transform: translate(calc(-50% - 0.5rem));
+    }
+}
+
+/* --------------------------------------- Index page section 2 + bars */
+
+.gradient-bar {
+    background: linear-gradient(45deg, #EA7A6A, #4103DE);
+    height: 40px;
+}
