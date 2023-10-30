@@ -74,6 +74,11 @@ const sendReq = async message => {
     // parse data as json and return the text
     const data = await res.json() 
 
+    if(!data) {
+        manager.addBotMessage("The API is overloaded right now, please try again later")
+        return
+    }
+
     console.log("data: ", data[0].generated_text)
 
     return data[0].generated_text.split("] ")[1] // split removes [INST] token at start
