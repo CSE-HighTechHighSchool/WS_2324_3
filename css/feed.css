@@ -27,7 +27,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     height:100vh;
-    /* border:5px solid red; */
 }
 .logo-w{
     width:7%;
@@ -95,6 +94,8 @@
     margin-right: 0;
 }
 
+/* profile picture */
+
 .image-container{
     width: 90px;
     height: 90px;
@@ -115,6 +116,7 @@
     z-index: 0;
 }
 
+/* navigation links */
 .nav-btn{
     padding:10px 30px;
     background:linear-gradient(45deg, #EA7A6A, #4103DE);
@@ -128,6 +130,7 @@
     border:none;
 }
 
+/* tweet styles */
 .tweet{
     z-index:10;
     transform: translateY(0);

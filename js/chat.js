@@ -39,8 +39,11 @@ const prompts = {
 // use query params to get the current person
 const param = new URLSearchParams(window.location.search).get("person")
 
-// if no param provided, redirect to choose a person
-if(!param) window.location.pathname = window.location.pathname.split("/").slice(0, -1).join("/") + "/choose.html"
+// if no param provided, alert user redirect to choose a person
+if(!param) {
+    alert("Person not specified, please choose a person first")
+    window.location.pathname = window.location.pathname.split("/").slice(0, -1).join("/") + "/choose.html"
+}
 
 const prompt = prompts[param]
 
