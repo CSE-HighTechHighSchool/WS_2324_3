@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/globals.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous" defer></script>
@@ -84,6 +85,7 @@
             <hr class="w-25" style="margin-left: 175px; border-width: 2px">
             <div style="height: 20px"></div>
             <div class="d-flex flex-row m-auto" style="width: 85%; margin-left: 7.5%; gap: 30px;">
+                <!-- scroller inner container -->
                 <div class="scroller position-relative" style="z-index:1;">
                     <div class="scroller-inner d-flex">
                         <div class="person-card" data-img="img/gwash.png" data-name="George Washington" data-person="gwash" data-desc="I am a very epic president that is very cool and likes to have a lot of fun. I fought in the revolutionary war and killed a lot of British people." data-dark="dark"></div>
@@ -97,6 +99,7 @@
                         <div class="person-card" data-img="img/ccolum.png" data-name="Christopher Columbus" data-person="ccolum" data-desc="I'm an Italian explorer who found the Americas. I am a man of pure beauty." data-dark="dark"></div>
                     </div>
                 </div>
+                <!-- see more -->
                 <div class="p-5 d-flex flex-column gap-3 justify-content-center align-items-center" class="width: 30%; z-index:50;">
                     <a href="choose.html" class="text-decoration-none see-more-button d-flex flex-column gap-3 justify-content-center align-items-center">
                         <i class="fa fa-arrow-right text-gradient" style="font-size: 50px"></i>
@@ -109,6 +112,7 @@
 
     <!-------------------------------- Dotted BG section -->
     <div class="w-100 gradient-bar"></div>
+    <!-- dots container class: used to reference and place dots programmatically using JS in index.js -->
     <div class="bg-white w-100 position-relative dots-container d-flex justify-content-center align-items-center flex-column" style="height: 75vh">
         <div class="rounded-2" style="background-color: #E2E8F0aa; height: 110px; width: 65%;">
             <div class="rounded-2 position-relative w-100 d-flex justify-content-center align-items-center" style="background-color: #E2E8F0aa; height: 110px; top: -15px; left: -15px; z-index: 10; width: 65%;">
@@ -139,7 +143,7 @@
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
                 <p>Talk and interact with people from history</p>
               </div>
-  
+              <!-- sitemap -->
               <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <h6 class="text-uppercase fw-bold">Pages</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>
@@ -149,7 +153,7 @@
                   <a href="../chat.html" class="footer-item text-decoration-none">My Chats</a>
                 </div>
               </div>
-  
+              <!-- contact -->
               <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <h6 class="text-uppercase fw-bold">Contact Us</h6>
                 <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px"/>

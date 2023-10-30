@@ -1,3 +1,4 @@
+// function to reroute to feed (used in util for components)
 function reroute(person) {
     console.log("bruh")
     window.location.href = `feed/${person}.html`
@@ -5,6 +6,7 @@ function reroute(person) {
 
 $(document).ready(function() {
     // attributes: data-img for img src, data-name for name, data-desc for desc
+
     const createImg = src => $(`<img src="${src}" height="66" width="66">`).css({
         borderRadius: "50%",
         width: "70px",
@@ -28,17 +30,16 @@ $(document).ready(function() {
         height: "8px",
     })
 
+    // finds every component in file with "person-card" class and appends title, description, and image for each card
     $(".person-card").map(function() {
-        const img = $(this).attr("data-img")
-        const name = $(this).attr("data-name")
-        const desc = $(this).attr("data-desc")
-        const person = $(this).attr("data-person")
-        const dark = $(this).attr("data-dark")
-        console.log("person: ", person)
+        const img = $(this).attr("data-img") //image source
+        const name = $(this).attr("data-name") // name of person
+        const desc = $(this).attr("data-desc") // description of person
+        const person = $(this).attr("data-person") // person path in feed/ to reroute
+        const dark = $(this).attr("data-dark") // used to determine if this is a card on the landing page or on the choose.html page
 
+        // setup container css, append children with params, and set to reroute to the feed page on click
         $(this).css({
-            // height: "200px",
-            // width: "175px",
             minWidth: "150px",
             width: dark==="dark" ? "6%" : "27%",
             aspectRatio: "9/11",
@@ -51,7 +52,6 @@ $(document).ready(function() {
             display: "flex",
             flexDirection: "column",
             paddingTop: "50px",
-            // justifyContent: "center",
             height: "400px",
             alignItems: "center",
             gap: "8px",

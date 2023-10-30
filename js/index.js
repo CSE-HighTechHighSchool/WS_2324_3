@@ -10,6 +10,8 @@ window.addEventListener('scroll', () => {
 })
 
 //------------------------------------------------------------------------------------------ iframe speed adjustment
+
+// checks if the youtube API has loaded and load the script if not
 if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
   console.log("test")
   var tag = document.createElement('script');
@@ -17,29 +19,30 @@ if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
-console.log("YT: ", YT)
 
+// video player states
 var player;
 let PLAYBACK_RATE = 0.75;
+
+// runs once youtube iframe API is loaded, creates a player and mounts onto node
 function onYouTubePlayerAPIReady() {
   player = new YT.Player('player', {
     height: '385',
     width: '640',
     videoId: "M7lc1UVf-VE",
     events: {
-      // 'onStateChange': onPlayerStateChange,
       'onReady': onPlayerReady
     }
   });
   console.log("YT: ", YT)
 }
+
+// runs once youtube player from API is loaded
 function onPlayerReady(event) {
-  console.log("event: ", event)
   event.target.playVideo()
-  console.log("keys: ", Object.keys(event.target))
-  console.log("avaliablePlaybacks: ", event.target.getAvailablePlaybackRates())
-  event.target.setPlaybackRate(PLAYBACK_RATE)
+  event.target.setPlaybackRate(PLAYBACK_RATE) // set the initial playback rate of the video
 }
+
 onYouTubePlayerAPIReady()
 
 //------------------------------------------------------------------------------------------ zoom out + fade out hero parallax
@@ -87,7 +90,6 @@ document.addEventListener("scroll", function() {
     } else if (scrollPosition <= 500) {
       PLAYBACK_RATE = 2;
     }
-    console.log(PLAYBACK_RATE);
     player.setPlaybackRate(PLAYBACK_RATE);
   }
 });
@@ -95,7 +97,7 @@ document.addEventListener("scroll", function() {
 
 
 //------------------------------------------------------------------------------------------ infinite scrolling animation
-const scrollers = document.querySelectorAll(".scroller");
+const scrollers = document.querySelectorAll(".scroller"); // select the scroller node
 
 function addAnimation() {
   scrollers.forEach((scroller) => {
@@ -118,42 +120,39 @@ function addAnimation() {
 addAnimation();
 
 //------------------------------------------------------------------------------------------ dotted background
-const dotsContainer = $(".dots-container")[0]
+const dotsContainer = $(".dots-container")[0] // select the div for the dots on html
 
-console.log("dots: ", dotsContainer.offsetHeight)
-
+// configuration for x: starts at 20px and creates another dot every 40 pixels
 const xStart = 20
 const xStep = 40
-const xEnd = Math.floor(dotsContainer.offsetWidth / 40) + 1
+const xEnd = Math.floor(dotsContainer.offsetWidth / 40) + 1 // fetch viewport width to determine how many columns of dots should be rendered
 
+// creates a new row of dots every 40 pixels
 const yStep = 40
-const yEnd = Math.floor(dotsContainer.offsetHeight / 40)
+const yEnd = Math.floor(dotsContainer.offsetHeight / 40) // fetch viewport height to determine how many rows are required
 
+
+// util function to setup classes for dot span
 const createDot = (xRow, yRow, random, delay) => $("<span></span>").css({
   position: "absolute",
-  left: `${10+xRow*xStep}px`,
-  top: `${10+yRow*yStep}px`,
+  left: `${10+xRow*xStep}px`, // set position dynamically
+  top: `${10+yRow*yStep}px`, // set position dynamically
   borderRadius: "50%",
   width: "8px",
   height: "8px",
   zIndex: 0,
-  backgroundColor: random === 1 ? "#94a3b8" : "#cbd5e1",
+  backgroundColor: random === 1 ? "#94a3b8" : "#cbd5e1", // uses random variable to set changing
   animation: "pulse-animation 2s infinite ease-in-out",
   animationDelay: `${delay}ms`
 })[0]
 
-console.log("testing")
-console.log("yEnd: ", yEnd, ", ")
-
+// loop through a matrix of dot positions
 for(let i = 0; i < yEnd; i++) {
   for(let j = 0; j < xEnd; j++) {
 
-    const random = Math.floor(Math.random() * 2)
-    const delay = Math.floor((i+j)*100)
+    const random = Math.floor(Math.random() * 2) // calculate a random number to determine the dot background color
+    const delay = Math.floor((i+j)*100) // calculate the animation delay based on which diagonal the dot is on (farther diagonals have a larger delay)
 
-    console.log("test")
-    dotsContainer.append(createDot(j, i, random, delay));
+    dotsContainer.append(createDot(j, i, random, delay)); // create the dot and append to container
   }
 }
-
-console.log("end")
