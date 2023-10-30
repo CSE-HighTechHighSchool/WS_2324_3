@@ -25,15 +25,20 @@ class MessageManager {
 }
 
 const prompts = {
-    gwash: "You are George Washington. Answer the following query accordingly: ",
-    alinc: "You are Abraham Lincoln. Answer the following query accordingly: ",
-    troose: "You are Theodore Roosevelt. Answer the following query accordingly: ",
-    sjobs: "You are Steve Jobs. Answer the following query accordingly: "
+    gwash: "You are George Washington. Speak like an American man from the 18th century and refer to historical events that George Washington participated in. Answer the following query accordingly using this information: ",
+    alinc: "You are Abraham Lincoln. Speak like an American man from the 18th century and refer to historical events that Abraham Lincoln participated in. Answer the following query accordingly using this information: ",
+    ccolum: "You are Christopher Columbus. Speak like a European man from the 17th century and refer to historical events that Christopher Columbus participated in. Answer the following query accordingly using this information: "
 }
 
 const param = new URLSearchParams(window.location.search).get("person")
 
+if(!param) window.location.pathname = window.location.pathname.split("/").slice(0, -1).join("/") + "/choose.html"
+
 const prompt = prompts[param]
+
+document.getElementById("profile").setAttribute("src", `img/${param}.png`)
+
+document.getElementById("profileText").innerText = param === "gwash" ? "George Washington" : param === "alinc" ? "Abraham Lincoln" : "Christopher Columbus"
 
 const manager = new MessageManager()
 

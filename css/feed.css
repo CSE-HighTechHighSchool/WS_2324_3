@@ -83,6 +83,18 @@
 }
 
 /* Body */
+.btn-sizing {
+    width:150px;
+    height:50px;
+    margin-left: auto;
+}
+
+.btn-text {
+    font-size: 20px;
+    text-decoration: none;
+    margin-right: 0;
+}
+
 .image-container{
     width: 90px;
     height: 90px;
@@ -103,6 +115,18 @@
     z-index: 0;
 }
 
+.nav-btn{
+    padding:10px 30px;
+    background:linear-gradient(45deg, #EA7A6A, #4103DE);
+    backdrop-filter: blur(40px);
+    border:none;
+    transition: 0.5s transform ease-in-out, 0.5s border ease-in-out;
+}
+.nav-btn:hover{
+    transform: translateY(-10%);
+    box-shadow: 4px 4px 4px 4px #888;
+    border:none;
+}
 
 .tweet{
     z-index:10;
