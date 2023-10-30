@@ -103,7 +103,21 @@
     z-index: 0;
 }
 
-/* FOoter */
+
+.tweet{
+    z-index:10;
+    transform: translateY(0);
+    transition: all 0.5s ease;
+}
+.tweet:hover{
+    z-index:300;
+    transform: translateY(-15px);
+}
+
+/* Footer */
+.prefooter{
+    height:100px;
+}
 .footer-item{
     color:white;
     transition: all 0.25s ease;
