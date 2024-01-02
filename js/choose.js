@@ -4,6 +4,11 @@ function reroute(person) {
     window.location.href = `feed/${person}.html`
 }
 
+function toggleNav() {
+    const display = document.getElementById("navbarSupportedContent").style.display;
+    document.getElementById("navbarSupportedContent").style.display = display === "none" ? "block" : "none";
+}
+
 $(document).ready(function() {
     // attributes: data-img for img src, data-name for name, data-desc for desc
 
@@ -41,7 +46,7 @@ $(document).ready(function() {
         // setup container css, append children with params, and set to reroute to the feed page on click
         $(this).css({
             minWidth: "150px",
-            width: dark==="dark" ? "6%" : "27%",
+            width: dark==="dark" ? "6%" : "300px",
             aspectRatio: "9/11",
             border: "1px solid black",
             borderRadius: "8px",

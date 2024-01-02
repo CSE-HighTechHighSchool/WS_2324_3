@@ -70,6 +70,9 @@
 .nav-link:hover::before{
     width: 100%;
 }
+.nav-toggle {
+    font-size: 30px;
+}   
 .navbar{
     background:rgba(0,0,0,0);
 }
@@ -136,6 +139,8 @@
     transform: translateY(0);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px -10px;
     transition: all 0.5s ease;
+    min-width: 65vw;
+    max-width: 80vw;
 }
 .tweet:hover{
     z-index:300;
@@ -153,4 +158,10 @@
 }
 .footer-item:hover{
     color: #4103DE;
+}
+
+/* Utils */
+
+.tweet-spacer {
+    height: 48px;
 }

@@ -60,7 +60,10 @@
 }
 .nav-link:hover::before{
     width: 100%;
-}     
+}  
+.nav-toggle {
+    font-size: 30px;
+}   
 .navbar{
     background:rgba(0,0,0,0);
 }
@@ -87,7 +90,7 @@
 }
 
 .person-card{
-    width:23%;
+    width:27%;
     transform: translateY(0);
     transition: all 0.5s ease;
 }
@@ -95,4 +98,13 @@
     transform: translateY(-10px);
     box-shadow: 0px 30px 50px rgba(65, 3, 222, .6);
     cursor:pointer;
+}
+
+
+/* Media Queries */
+
+@media screen and (max-width: 800px) {
+    .hidden-scroll {
+        box-shadow: none;
+    }
 }
