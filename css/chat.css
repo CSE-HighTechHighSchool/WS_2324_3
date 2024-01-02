@@ -4,6 +4,7 @@
     margin-top: 100px;
     width: 90px;
     height: 90px;
+    margin-left: calc(50% - 45px);
 }
 .image-container img {
     width: 80px;
@@ -22,7 +23,7 @@
 }
 
 .intro-container {
-    gap: 5px;
+    gap: 25px;
 }
 
 .profile-text {
@@ -30,7 +31,10 @@
     font-size: 20px;
     text-align: center;
     position: relative;
-    left: -13px;
+}
+
+.spacer {
+    height: 20px;
 }
 
 /* ------------------------------ message utility classes */
