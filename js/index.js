@@ -146,13 +146,16 @@ const createDot = (xRow, yRow, random, delay) => $("<span></span>").css({
   animationDelay: `${delay}ms`
 })[0]
 
-// loop through a matrix of dot positions
-for(let i = 0; i < yEnd; i++) {
-  for(let j = 0; j < xEnd; j++) {
+function loopDots(){
+  // loop through a matrix of dot positions
+  for(let i = 0; i < yEnd; i++) {
+    for(let j = 0; j < xEnd; j++) {
 
-    const random = Math.floor(Math.random() * 2) // calculate a random number to determine the dot background color
-    const delay = Math.floor((i+j)*100) // calculate the animation delay based on which diagonal the dot is on (farther diagonals have a larger delay)
+      const random = Math.floor(Math.random() * 2) // calculate a random number to determine the dot background color
+      const delay = Math.floor((i+j)*100) // calculate the animation delay based on which diagonal the dot is on (farther diagonals have a larger delay)
 
-    dotsContainer.append(createDot(j, i, random, delay)); // create the dot and append to container
+      dotsContainer.append(createDot(j, i, random, delay)); // create the dot and append to container
+    }
   }
 }
+loopDots()

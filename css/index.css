@@ -249,12 +249,10 @@ iframe {
 }  
 /* --------------------------------------- Index page section 1 (regular css & the scroller) */
 .landing-about-title {
-    font-size: 65px;
-    margin-left: 100px;
+    margin-left: 5.208vw;
 }
 .landing-about-info {
-    font-size: 35px;
-    margin-left: 100px;
+    margin-left: 5.208vw;
     font-weight:normal;
 }
 .see-more-button {
