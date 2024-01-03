@@ -5,8 +5,17 @@ function reroute(person) {
 }
 
 function toggleNav() {
+    console.log("nav toggling")
     const display = document.getElementById("navbarSupportedContent").style.display;
     document.getElementById("navbarSupportedContent").style.display = display === "none" ? "block" : "none";
+}
+
+function toggleIndexNav() {
+    console.log("nav toggling")
+    const display = document.getElementById("navbarSupportedContent").style.display;
+    document.getElementById("navbarSupportedContent").style.display = display === "none" ? "block" : "none";
+    
+    document.getElementById("navToggleBG").style.background = display === "none" ? "rgb(0,0,0)" : "none";
 }
 
 $(document).ready(function() {
