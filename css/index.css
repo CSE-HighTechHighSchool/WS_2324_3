@@ -52,9 +52,14 @@ iframe {
     /* transform:scale(1.2); */
     filter: brightness(55%);
 }
+@media (min-width: 0px){ 
+    iframe {
+        transform:scale(10);
+    }
+}
 @media (min-width: 400px){ 
     iframe {
-        transform:scale(3.5);
+        transform:scale(3.75);
     }
 }
 @media (min-width: 700px){ 
@@ -94,11 +99,11 @@ iframe {
 }
 
 .landing-title {
-    font-size: 3rem;
+    font-size: calc(20px + 2vw);
 }
 
 .hero-text {
-    font-size: 1.5rem;
+    font-size: calc(14px + 0.5vw);
     text-align: center;
 }
 .nav-toggle {
@@ -249,9 +254,11 @@ iframe {
 }  
 /* --------------------------------------- Index page section 1 (regular css & the scroller) */
 .landing-about-title {
+    font-size: calc(18px + 1.5vw);
     margin-left: 5.208vw;
 }
 .landing-about-info {
+    font-size: calc(14px + 1vw);
     margin-left: 5.208vw;
     font-weight:normal;
 }
