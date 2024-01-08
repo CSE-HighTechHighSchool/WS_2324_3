@@ -73,5 +73,130 @@ function renderMessage(message, key) {
 
 window.onload = () => {
     getMessages()
+    console.log("running createChart")
+    createChart()
 }
 
+// getting data for chartjs
+async function getChartData(){
+    const messagesList = []
+
+    console.log("bruh", user.uid)
+
+    const snapshot = await get(ref(db, `users/${user.uid}/message`))
+    console.log("snapshot: ", snapshot.val())
+
+    if(snapshot.exists()) {
+        console.log(snapshot.val())
+        snapshot.forEach(child => {
+            messagesList.push({ key: child.key, val: child.val() })
+        })
+    }
+
+    /* console.log("printing messages list")
+    messagesList.forEach((m) => {
+        console.log("logging new val & key:")
+        console.log(m.val, m.key)
+    }) */
+
+    return messagesList
+    /* // Dynamically add table rows to HTML using string interpolation
+    tBodyEl.innerHTML = ''    // Clear any existing table
+    for(let i = 0; i < days.length; i++) {
+      addItemToTable(days[i], temps[i], tBodyEl)
+    } */
+  }
+
+// making the chartjs
+async function createChart(){
+    console.log("createChart: printing messages list")
+
+    // Organize the data into lists for the chartjs
+    let mKeys = []
+    let mVals = []
+    // Variable to store # of messages sent to each person
+    let totalMessages = {
+        "gwash":0,
+        "alinc":0,
+        "ccolum":0
+    }
+
+    let messagesList = await getChartData()
+    messagesList.forEach((m) => {
+        mKeys.push(m.key)
+        mVals.push(m.val)
+    })
+
+    // Go through each chat (gw, linc, etc.) and count up how many messages in each chat
+    mVals.forEach((mval) => {
+        totalMessages[mval.person] += mval.messages.length
+    })
+    console.log(`gwash: ${totalMessages["gwash"]}`)
+    //create the actual chart
+    const ctx = document.getElementById("myChart")
+    const myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["George Washington", "Abraham Lincoln", "Christopher Columbus"],
+            datasets:[
+                {
+                    label: `Messages:`,
+                    data: [totalMessages["gwash"], totalMessages["alinc"], totalMessages["ccolum"]],
+                    fill: false,
+                    backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(0, 102, 255, 0.2)", "rgba(0, 153, 51, 0.2)"],
+                    borderColor: ["rgba(255, 99, 132, 0.2)", "rgba(0, 102, 255, 0.2)", "rgba(0, 153, 51, 0.2)"],
+                    borderWidth: 1,
+                },
+            ]
+        },
+        options: {
+            responsive: true, // resize based on screen size
+            scales: {
+                x: {
+                    title: {
+                        display: true,
+                        text: "People", // x-axis title
+                        font: {
+                            size: 20,
+                        },
+                    },
+                    ticks: {
+                        font: {
+                            size: 16
+                        }
+                    }
+                },
+                y: {
+                    title: {
+                        display: true,
+                        text: `Messages Sent`, // x-axis title
+                        font: {
+                            size: 20,
+                        },
+                    },
+                    ticks: {
+                        font: {
+                            size: 12
+                        }
+                    }
+                }
+            },
+            plugins: { // Display options
+                title: {
+                    display: true,
+                    text: "Messages Sent",
+                    font: {
+                        size: 24
+                    },
+                    padding: {
+                        top: 30,
+                        bottom: 30,
+                    }
+                },
+                legend: {
+                    display:false,
+                }
+            }
+        },
+    })
+}
