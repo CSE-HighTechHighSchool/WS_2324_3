@@ -108,7 +108,7 @@ class MessageManager {
 
     // appends user message node
     async addUserMessage(message) {
-        this.messages.push({ who: "user", message })
+        this.messages.push({ who: "user", message, date: new Date() })
         const node = createUserMessage(message)
         messageContainer.append(node)
         await setMessage(this.messages)
@@ -116,7 +116,7 @@ class MessageManager {
 
     // appends bot message node
     async addBotMessage(message) {
-        this.messages.push({ who: "assistant", message })
+        this.messages.push({ who: "assistant", message, date: new Date() })
         const node = createBotMessage(message)
         messageContainer.append(node)
         await setMessage(this.messages)
