@@ -19,6 +19,11 @@
     height:100vh;
     /* border:5px solid red; */
 }
+
+.nav-logout {
+    cursor: pointer
+}
+
 .logo-w{
     width:8%;
 }

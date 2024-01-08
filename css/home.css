@@ -33,3 +33,7 @@
 .message-container:hover {
     background-color: #e2e8f0
 }
+
+.home-spacer {
+    height: 30px;
+}

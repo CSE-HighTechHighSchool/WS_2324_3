@@ -122,3 +122,13 @@ function encryptPass(password){
   let encrypted = CryptoJS.AES.encrypt(password, password);
   return encrypted.toString();
 }
+
+window.onload = () => {
+
+  const user = localStorage.getItem("user")
+  console.log(user)
+  if(user) {
+      sessionStorage.setItem("user", user)
+      window.location = "home.html"   
+  }
+}

@@ -79,9 +79,10 @@ document.getElementById("signIn").onclick = () => {
         
 }
 
-document.onload = () => {
+window.onload = () => {
 
-    user = localStorage.getItem(user)
+    const user = localStorage.getItem("user")
+    console.log(user)
     if(user) {
         sessionStorage.setItem("user", user)
         window.location = "home.html"   
