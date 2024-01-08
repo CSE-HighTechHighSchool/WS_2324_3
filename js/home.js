@@ -27,9 +27,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
-import "./protected.js";
-
-
 const user = JSON.parse(sessionStorage.getItem("user"))
 
 async function getMessages() {
@@ -72,6 +69,13 @@ function renderMessage(message, key) {
 }
 
 window.onload = () => {
+    console.log("onload")
+    if (user === null) {
+        window.location = "/index.html"
+        alert("You're not signed in!")
+        console.log("window url changed")
+    }
+    
     getMessages()
     console.log("running createChart")
     createChart()

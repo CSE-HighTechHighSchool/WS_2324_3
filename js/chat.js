@@ -192,3 +192,11 @@ window.onkeydown = async function(e) {
         document.getElementById("chatbox").value = ""
     }
 }
+window.onload = () => {
+    console.log("onload")
+    if (user === null) {
+        window.location = "/index.html"
+        alert("You're not signed in!")
+        console.log("window url changed")
+    }
+}

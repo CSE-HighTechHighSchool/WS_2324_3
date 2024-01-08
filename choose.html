@@ -15,7 +15,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/choose.js"></script>
     <script src="js/logout.js" defer></script>
-    <!-- <script src="js/toggleNav.js"></script> -->
+    <script>
+      const user = JSON.parse(sessionStorage.getItem("user"))
+      window.onload = () => {
+          console.log("onload")
+          if (user === null) {
+              window.location = "/index.html"
+              alert("You're not signed in!")
+              console.log("window url changed")
+          }
+      }
+    </script>
   </head>
   <body style="width: 100vw; height: 100vh; overflow:hidden;">
     <div class="w-100 bg-white fixed-top">
