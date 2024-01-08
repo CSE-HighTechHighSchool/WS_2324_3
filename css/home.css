@@ -30,10 +30,12 @@
     cursor: pointer;
 }
 
-.message-container:hover {
-    background-color: #e2e8f0
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.home-spacer {
-    height: 30px;
+.message-container:hover {
+    background-color: #e2e8f0
 }
