@@ -1,7 +1,33 @@
+/* Screen */
 .main-container {
     padding: 40px;
 }
 
+/* Message Entry Holder */
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.message-container:hover {
+    background-color: #e2e8f0
+}
+
+/* CSS for each message entry */
+.message-container {
+    padding: 20px;
+    background-color: #f1f5f9;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+/* Flex container for the chat title and date */
 .message-container-inner {
     display: flex;
     flex-direction: column;
@@ -16,26 +42,4 @@
 .message-container-inner p {
     font-size: 15px;
     color: #444
-}
-
-.message-container {
-    padding: 20px;
-    background-color: #f1f5f9;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    transition: 0.3s;
-    cursor: pointer;
-}
-
-.messages-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.message-container:hover {
-    background-color: #e2e8f0
 }
