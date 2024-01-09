@@ -191,6 +191,7 @@ window.onkeydown = async function(e) {
     }
 }
 window.onload = () => {
+    // Not signed in alert
     console.log("onload")
     if (user === null) {
         window.location = "/index.html"

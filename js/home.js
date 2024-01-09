@@ -69,15 +69,17 @@ function renderMessage(message, key) {
 }
 
 window.onload = () => {
+    // Not signed in alert
     console.log("onload")
     if (user === null) {
         window.location = "/index.html"
         alert("You're not signed in!")
         console.log("window url changed")
     }
-    
+    // Load messages from database
     getMessages()
     console.log("running createChart")
+    // Create chartjs bar graph
     createChart()
 }
 
@@ -86,34 +88,24 @@ async function getChartData(){
     const messagesList = []
 
     console.log("bruh", user.uid)
-
+    // Gets data from database
     const snapshot = await get(ref(db, `users/${user.uid}/message`))
     console.log("snapshot: ", snapshot.val())
 
     if(snapshot.exists()) {
         console.log(snapshot.val())
         snapshot.forEach(child => {
+            // Saves key,val pairs from the database nodes
             messagesList.push({ key: child.key, val: child.val() })
         })
     }
 
-    /* console.log("printing messages list")
-    messagesList.forEach((m) => {
-        console.log("logging new val & key:")
-        console.log(m.val, m.key)
-    }) */
-
     return messagesList
-    /* // Dynamically add table rows to HTML using string interpolation
-    tBodyEl.innerHTML = ''    // Clear any existing table
-    for(let i = 0; i < days.length; i++) {
-      addItemToTable(days[i], temps[i], tBodyEl)
-    } */
   }
 
 // making the chartjs
 async function createChart(){
-    console.log("createChart: printing messages list")
+    console.log("createChart running")
 
     // Organize the data into lists for the chartjs
     let mKeys = []
@@ -125,6 +117,7 @@ async function createChart(){
         "ccolum":0
     }
 
+    // sort through and save the key value pairs from the messages list
     let messagesList = await getChartData()
     messagesList.forEach((m) => {
         mKeys.push(m.key)
@@ -136,6 +129,7 @@ async function createChart(){
         totalMessages[mval.person] += mval.messages.length
     })
     console.log(`gwash: ${totalMessages["gwash"]}`)
+
     //create the actual chart
     const ctx = document.getElementById("myChart")
     const myChart = new Chart(ctx, {
@@ -173,7 +167,7 @@ async function createChart(){
                 y: {
                     title: {
                         display: true,
-                        text: `Messages Sent`, // x-axis title
+                        text: `Messages Sent`, // y-axis title
                         font: {
                             size: 20,
                         },

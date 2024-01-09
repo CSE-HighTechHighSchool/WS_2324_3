@@ -4,12 +4,13 @@ function reroute(person) {
     window.location.href = `feed/${person}.html`
 }
 
+// choose page specific navbar toggle (for responsiveness)
 function toggleNav() {
     console.log("nav toggling")
     const display = document.getElementById("navbarSupportedContent").style.display;
     document.getElementById("navbarSupportedContent").style.display = display === "none" ? "block" : "none";
 }
-
+// index page specific navbar toggle (for responsiveness)
 function toggleIndexNav() {
     console.log("nav toggling")
     const display = document.getElementById("navbarSupportedContent").style.display;
