@@ -20,8 +20,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getDatabase(app)
 
-import "./protected.js"
-
 const HF_API_TOKEN = "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" // this is MY (Vishrut's) API token, and for the sake of convenience I'm using it here. Please don't steal it because it will make me very sad :_(
 
 // utils to add message to DOM
