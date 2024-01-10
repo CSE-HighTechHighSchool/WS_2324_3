@@ -76,7 +76,9 @@ document.getElementById("signIn").onclick = () => {
                 })
             }).catch(() => alert("User fetch failed"))
         })
-        
+        .catch(() => {
+            alert("The email and password you entered did not match our records. Please double-check and try again.")
+        })
 }
 
 window.onload = () => {
