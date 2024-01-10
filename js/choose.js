@@ -1,3 +1,5 @@
+// this file creates "person cards", navbar toggling, and rerouting to different pages
+
 // function to reroute to feed (used in util for components)
 function reroute(person) {
     console.log("bruh")

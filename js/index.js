@@ -1,3 +1,4 @@
+// Main code for the index page + corresponding styling
 //------------------------------------------------------------------------------------------ navbar transparency scrolling effect
 const navbar = document.querySelector('.navbar')
 window.addEventListener('scroll', () => {

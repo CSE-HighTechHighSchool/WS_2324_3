@@ -1,3 +1,4 @@
+// Function to log users out (used globally)
 function logout() {
     localStorage.removeItem("user")
     sessionStorage.removeItem("user")

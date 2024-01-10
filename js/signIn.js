@@ -1,3 +1,4 @@
+// This file allows users to signin to the website through Firebase
 // ----------------- User Sign-In Page --------------------------------------//
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
