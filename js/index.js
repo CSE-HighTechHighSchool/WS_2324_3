@@ -55,9 +55,7 @@ let prevScrollPosition = 0;
 
 document.addEventListener("scroll", function() {
   const scrollPosition = window.scrollY;
-  console.log(`scroll pos: ${scrollPosition}`);
   const scrollDirection = scrollPosition > prevScrollPosition ? "down" : "up";
-  console.log(`scroll dir: ${scrollDirection}`)
   
   prevScrollPosition = scrollPosition;
 
@@ -159,4 +157,21 @@ function loopDots(){
     }
   }
 }
+
 loopDots()
+
+window.addEventListener("resize", function(event) {
+  dotsContainer.innerHTML = `
+  <div class="rounded-2" style="background-color: #E2E8F0aa; height: 110px; width: 65%;">
+    <div class="rounded-2 position-relative w-100 d-flex justify-content-center align-items-center" style="background-color: #E2E8F0aa; height: 110px; top: -15px; left: -15px; z-index: 10; width: 65%;">
+        <h1 class="position-relative text-nowrap" style="font-size: calc(25px + 4vw);">It's What Happened.</h1>
+    </div>
+  </div>
+  <div style="height: 150px;"></div>
+  <button class="d-flex btn shadow-none mx-5 rounded gradient borderless chatnow-btn" style="z-index: 50">
+    <a href="choose.html" class="text-light btn-text">See Feed</a>
+  </button>
+  `
+  loopDots()
+  console.log("Test")
+})
