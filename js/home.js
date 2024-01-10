@@ -53,6 +53,7 @@ async function getMessages() {
 
 // }
 
+// Renders boxes on home page/dashboard for their recent chats
 function renderMessage(message, key) {
     const elem = document.createElement("div")
     elem.className = "message-container"
@@ -67,6 +68,7 @@ function renderMessage(message, key) {
         <div style="flex-grow: 1"></div>
     `
 
+    // Deletes chats upon click
     const deleteElem = document.createElement("button")
     deleteElem.innerText = "Delete"
     deleteElem.className = "delete-message"

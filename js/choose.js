@@ -21,6 +21,7 @@ function toggleIndexNav() {
     document.getElementById("navToggleBG").style.background = display === "none" ? "rgb(0,0,0)" : "none";
 }
 
+// Creates person cards
 $(document).ready(function() {
     // attributes: data-img for img src, data-name for name, data-desc for desc
 

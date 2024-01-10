@@ -52,6 +52,7 @@ if(!emailRegex.test(email)){
 return true;
 }
 
+// Signs users in by checking through Firebase
 document.getElementById("signIn").onclick = () => {
     const email = document.getElementById("loginEmail").value
     const password = document.getElementById("loginPassword").value
@@ -82,8 +83,8 @@ document.getElementById("signIn").onclick = () => {
         })
 }
 
+// Redirects upon login
 window.onload = () => {
-
     const user = localStorage.getItem("user")
     console.log(user)
     if(user) {
@@ -93,7 +94,6 @@ window.onload = () => {
 }
 
 // ---------------- Keep User Logged In ----------------------------------//
-
 function login(user) {
     // session storage for current, local storage permanent
     // convert to object
@@ -107,6 +107,7 @@ function login(user) {
     window.location = "home.html"
 }
 
+// Signout function
 function signOut() {
     sessionStorage.removeItem("user")
     localStorage.removeItem("user")

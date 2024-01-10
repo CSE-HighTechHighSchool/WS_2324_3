@@ -124,7 +124,6 @@ function encryptPass(password){
 }
 
 window.onload = () => {
-
   const user = localStorage.getItem("user")
   console.log(user)
   if(user) {

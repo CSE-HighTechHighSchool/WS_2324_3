@@ -36,6 +36,7 @@ const createBotMessage = (message) => $("<div></div>").attr("class", "bot-messag
 
 const user = JSON.parse(sessionStorage.getItem("user"))
 
+// Creates IDs randomly
 function makeId(length) {
     let result = '';
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -51,7 +52,7 @@ function makeId(length) {
 
 let messagesId = new URLSearchParams(window.location.search).get("msgid")
 
-
+// Updates firebase with new messages sent by both the user and AI
 async function setMessage(messages) {
     console.log(manager.messages)
     if(manager.messages.length < 2) {
@@ -69,6 +70,7 @@ async function setMessage(messages) {
     }
 }
 
+// Get messages from Firebase
 async function getMessages(messagesId) {
     if(messagesId) {
         const snapshot = await get(ref(db, `users/${user.uid}/message/${messagesId}`))
