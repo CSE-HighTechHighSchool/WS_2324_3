@@ -160,7 +160,9 @@ function loopDots(){
 
 loopDots()
 
+// recreate the dots when the window is resized for responsivity
 window.addEventListener("resize", function(event) {
+  // reset the dots container and add back all the text and button that was originally there
   dotsContainer.innerHTML = `
   <div class="rounded-2" style="background-color: #E2E8F0aa; height: 110px; width: 65%;">
     <div class="rounded-2 position-relative w-100 d-flex justify-content-center align-items-center" style="background-color: #E2E8F0aa; height: 110px; top: -15px; left: -15px; z-index: 10; width: 65%;">
@@ -172,6 +174,5 @@ window.addEventListener("resize", function(event) {
     <a href="choose.html" class="text-light btn-text">See Feed</a>
   </button>
   `
-  loopDots()
-  console.log("Test")
+  loopDots() // recreate the dots
 })
