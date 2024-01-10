@@ -175,6 +175,7 @@ async function createChart(){
         },
         options: {
             responsive: true, // resize based on screen size
+            maintainAspectRatio: false,
             scales: {
                 x: {
                     title: {
