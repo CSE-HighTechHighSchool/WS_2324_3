@@ -37,7 +37,7 @@ function isEmptyorSpaces(str){
   
 // ---------------------- Validate Registration Data -----------------------//
 function validation(email, password){
-let emailRegex = /^[a-zA-Z0-9]+@ctemc\.org$/;
+let emailRegex = /^[a-zA-Z0-9]+@(ctemc|gmail|msn|outlook|hotmail)\.(org|com|edu)$/;
 
 if(isEmptyorSpaces(email) || isEmptyorSpaces(password)){
         alert("Please complete all fields.");

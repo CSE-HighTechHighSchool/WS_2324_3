@@ -70,10 +70,10 @@ document.getElementById('submitData').onclick = function(){
       alert('User created successfully!')
       window.location.href = "/login.html"
     })
-    .catch((error) => {
-      // The write failed...
-      alert(error)
-    });
+    // .catch((error) => {
+    //   // The write failed...
+    //   alert(error)
+    // });
   })
   .catch((error) => {
     const errorCode = error.code;

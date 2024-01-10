@@ -11,6 +11,7 @@ import {
   update,
   child,
   get,
+  remove
 } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -47,6 +48,10 @@ async function getMessages() {
     messagesList.forEach(m => renderMessage(m.val, m.key))
 }
 
+// function deleteMessage(id) {
+
+// }
+
 function renderMessage(message, key) {
     const elem = document.createElement("div")
     elem.className = "message-container"
@@ -58,15 +63,33 @@ function renderMessage(message, key) {
             <h1>${name}</h1>
             <p>${new Date(message.lastUpdated).toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})}</p>
         </div>
+        <div style="flex-grow: 1"></div>
     `
+
+    const deleteElem = document.createElement("button")
+    deleteElem.innerText = "Delete"
+    deleteElem.className = "delete-message"
+    deleteElem.onclick = (e) => {
+        e.stopPropagation()
+        console.log(`users/${user.uid}/message/${key}`)
+        remove(ref(db, `users/${user.uid}/message/${key}`))
+            .then(() => {
+                alert("Chat deleted successfully!")
+                window.location.reload()
+            })
+            .catch(e => console.log(e))
+    }
+
+    elem.appendChild(deleteElem)
+
     elem.onclick = () => {
         window.location.href = `/chat.html?person=${message.person}&msgid=${key}`
     }
-    
 
     const container = document.getElementById("messagesContainer")
     container.appendChild(elem)
 }
+
 
 window.onload = () => {
     // Not signed in alert

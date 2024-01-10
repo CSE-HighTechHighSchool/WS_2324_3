@@ -43,3 +43,19 @@
     font-size: 15px;
     color: #444
 }
+
+
+/* Delete chat button */
+.delete-message {
+    outline: none;
+    border: none;
+    background-color: #ef4444;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: 0.3s
+}
+
+.delete-message:hover {
+    background: #dc2626;
+}
