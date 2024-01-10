@@ -68,7 +68,7 @@ document.getElementById('submitData').onclick = function(){
     .then(() =>{
       // Data saved successfully
       alert('User created successfully!')
-      window.location.href = "/login.html"
+      window.location.href = "login.html"
     })
     // .catch((error) => {
     //   // The write failed...

@@ -197,7 +197,7 @@ window.onload = () => {
     // Not signed in alert
     console.log("onload")
     if (user === null) {
-        window.location = "/index.html"
+        window.location = "index.html"
         alert("You're not signed in!")
         console.log("window url changed")
     }

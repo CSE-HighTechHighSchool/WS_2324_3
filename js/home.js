@@ -86,7 +86,7 @@ function renderMessage(message, key) {
     elem.appendChild(deleteElem)
 
     elem.onclick = () => {
-        window.location.href = `/chat.html?person=${message.person}&msgid=${key}`
+        window.location.href = `chat.html?person=${message.person}&msgid=${key}`
     }
 
     const container = document.getElementById("messagesContainer")
@@ -98,7 +98,7 @@ window.onload = () => {
     // Not signed in alert
     console.log("onload")
     if (user === null) {
-        window.location = "/index.html"
+        window.location = "index.html"
         alert("You're not signed in!")
         console.log("window url changed")
     }
